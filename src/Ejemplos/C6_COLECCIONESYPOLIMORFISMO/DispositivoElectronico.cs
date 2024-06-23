@@ -1,6 +1,6 @@
 public abstract class DispositivoElectronico
 {
-    // Atributo privado
+    // Atributos privados
     private bool estado;
     private string tipoDispositivo;
     

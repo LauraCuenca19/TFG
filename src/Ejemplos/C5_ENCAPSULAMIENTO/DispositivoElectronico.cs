@@ -1,6 +1,6 @@
 public class DispositivoElectronico
 {
-    // Atributo privado
+    // Atributos privados
     private string numeroDeSerie;
 
     // Atributo protegido

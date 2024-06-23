@@ -3,7 +3,7 @@ public class Sensor : DispositivoElectronico
     // Atributo privado
     private string tipoSensor; // Almacena el tipo de sensor
 
-    // Atributos para almacenar unidad de medida
+    // Atributo para almacenar unidad de medida
     public readonly string unidades;
     
     // Propiedad para el tipo de sensor con validación en el set
