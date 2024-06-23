@@ -1,0 +1,14 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\bin\Debug\net7.0\AR6_CLASESABSTRACTAS.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\bin\Debug\net7.0\AR6_CLASESABSTRACTAS.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\bin\Debug\net7.0\AR6_CLASESABSTRACTAS.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\bin\Debug\net7.0\AR6_CLASESABSTRACTAS.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\bin\Debug\net7.0\AR6_CLASESABSTRACTAS.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\refint\AR6_CLASESABSTRACTAS.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\ref\AR6_CLASESABSTRACTAS.dll

@@ -1,0 +1,14 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\bin\Debug\net7.0\AR6_INTERFACES.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\bin\Debug\net7.0\AR6_INTERFACES.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\bin\Debug\net7.0\AR6_INTERFACES.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\bin\Debug\net7.0\AR6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\bin\Debug\net7.0\AR6_INTERFACES.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\refint\AR6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\src\EjerciciosResueltos\AR6_INTERFACES\obj\Debug\net7.0\ref\AR6_INTERFACES.dll
