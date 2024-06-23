@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\C5_ENCAPSULAMIENTO.csproj",
+      "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\C5_ENCAPSULAMIENTO.csproj",
       "projectName": "C5_ENCAPSULAMIENTO",
-      "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\C5_ENCAPSULAMIENTO.csproj",
+      "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\C5_ENCAPSULAMIENTO.csproj",
       "packagesPath": "C:\\Users\\lalac\\.nuget\\packages\\",
-      "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\obj\\",
+      "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C5_ENCAPSULAMIENTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lalac\\AppData\\Roaming\\NuGet\\NuGet.Config"

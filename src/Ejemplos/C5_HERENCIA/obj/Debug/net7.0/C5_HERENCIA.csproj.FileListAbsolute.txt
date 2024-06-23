@@ -26,3 +26,17 @@ C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\refi
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\ref\C5_HERENCIA.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\bin\Debug\net7.0\C5_HERENCIA.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\bin\Debug\net7.0\C5_HERENCIA.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\bin\Debug\net7.0\C5_HERENCIA.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\bin\Debug\net7.0\C5_HERENCIA.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\bin\Debug\net7.0\C5_HERENCIA.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\refint\C5_HERENCIA.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\C5_HERENCIA.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_HERENCIA\obj\Debug\net7.0\ref\C5_HERENCIA.dll

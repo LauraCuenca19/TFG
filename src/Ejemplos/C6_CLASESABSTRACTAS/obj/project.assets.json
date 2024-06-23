@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\C6_CLASESABSTRACTAS.csproj",
+      "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\C6_CLASESABSTRACTAS.csproj",
       "projectName": "C6_CLASESABSTRACTAS",
-      "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\C6_CLASESABSTRACTAS.csproj",
+      "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\C6_CLASESABSTRACTAS.csproj",
       "packagesPath": "C:\\Users\\lalac\\.nuget\\packages\\",
-      "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\obj\\",
+      "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_CLASESABSTRACTAS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lalac\\AppData\\Roaming\\NuGet\\NuGet.Config"

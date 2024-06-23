@@ -1,11 +1,11 @@
 {
 	"folders": [
-	  {
-		"path": "Ejemplos"
-	  },
-	  {
-		"path": "EjerciciosResueltos"
-	  }
+		{
+			"path": "Ejemplos"
+		},
+		{
+			"path": "ActividadesResueltas"
+		}
 	],
 	"settings": {},
 	"launch": {

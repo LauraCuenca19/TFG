@@ -26,3 +26,17 @@ C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\ref\C5_ENCAPSULAMIENTO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\bin\Debug\net7.0\C5_ENCAPSULAMIENTO.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\bin\Debug\net7.0\C5_ENCAPSULAMIENTO.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\bin\Debug\net7.0\C5_ENCAPSULAMIENTO.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\bin\Debug\net7.0\C5_ENCAPSULAMIENTO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\bin\Debug\net7.0\C5_ENCAPSULAMIENTO.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\refint\C5_ENCAPSULAMIENTO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\C5_ENCAPSULAMIENTO.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_ENCAPSULAMIENTO\obj\Debug\net7.0\ref\C5_ENCAPSULAMIENTO.dll

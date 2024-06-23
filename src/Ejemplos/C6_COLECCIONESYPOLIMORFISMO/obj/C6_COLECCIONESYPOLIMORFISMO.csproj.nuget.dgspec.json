@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj": {}
+    "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj": {}
   },
   "projects": {
-    "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj": {
+    "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj",
+        "projectUniqueName": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj",
         "projectName": "C6_COLECCIONESYPOLIMORFISMO",
-        "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj",
+        "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\C6_COLECCIONESYPOLIMORFISMO.csproj",
         "packagesPath": "C:\\Users\\lalac\\.nuget\\packages\\",
-        "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\obj\\",
+        "outputPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C6_COLECCIONESYPOLIMORFISMO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lalac\\AppData\\Roaming\\NuGet\\NuGet.Config"
