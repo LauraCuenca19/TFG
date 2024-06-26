@@ -1,54 +1,57 @@
-public class DispositivoElectronico
+namespace Ejemplos.C5_ENCAPSULAMIENTO
 {
-    // Atributos privados
-    private string numeroDeSerie;
-
-    // Atributo protegido
-    protected string modelo;
-
-    // Atributo público
-    public DateTime fechaMantenimiento;
-
-    // Constructor con parámetros
-    public DispositivoElectronico(string numSerie, string modeloDispositivo, DateTime fechaDeMantenimiento)
+    public class Dispositivo
     {
-        numeroDeSerie = numSerie;
-        modelo = modeloDispositivo;
-        fechaMantenimiento = fechaDeMantenimiento;
-        Console.WriteLine("Dispositivo con valores especificados.");
-    }
+        // Atributos privados
+        private string numeroDeSerie;
 
-    // Método privado para mostrar el número de serie
-    private void MostrarNumeroDeSerie()
-    {
-        Console.WriteLine($"Número de Serie: {numeroDeSerie}");
-    }
+        // Atributo protegido
+        protected string modeloDispositivo;
 
-    // Método protegido para mostrar el modelo
-    protected void MostrarModelo()
-    {
-        Console.WriteLine($"Modelo: {modelo}");
-    }
+        // Atributo público
+        public DateTime fechaMantenimiento;
 
-    // Método público para mostrar la fecha de mantenimiento
-    public void MostrarFechaDeMantenimiento()
-    {
-        Console.WriteLine($"Fecha de Mantenimiento: {fechaMantenimiento}");
-    }
+        // Constructor
+        public Dispositivo(string numeroDeSerie, string modeloDispositivo, DateTime fechaMantenimiento)
+        {
+            this.numeroDeSerie = numeroDeSerie;
+            this.modeloDispositivo = modeloDispositivo;
+            this.fechaMantenimiento = fechaMantenimiento;
+            Console.WriteLine("Dispositivo con valores especificados.");
+        }
 
-    public void DemostrarAccesoDesdeClase()
-    {
-        // Acceso a atributos y métodos desde dentro de la clase
-        numeroDeSerie = "12345";
-        modelo = "ModeloX";
-        fechaMantenimiento = new DateTime(2024, 10, 25);;
+        // Método privado para mostrar el número de serie
+        private void MostrarNumeroDeSerie()
+        {
+            Console.WriteLine($"Número de Serie: {numeroDeSerie}");
+        }
 
-        Console.WriteLine("Demostración de acceso desde la clase:");
-        MostrarNumeroDeSerie();
-        MostrarModelo();
-        MostrarFechaDeMantenimiento();
+        // Método protegido para mostrar el modelo
+        protected void MostrarModelo()
+        {
+            Console.WriteLine($"Modelo: {modeloDispositivo}");
+        }
 
-        // Todos los miembros son accesibles desde aquí 
-        // No presentan ningún error en este punto del código
+        // Método público para mostrar la fecha de mantenimiento
+        public void MostrarFechaDeMantenimiento()
+        {
+            Console.WriteLine($"Fecha de Mantenimiento: {fechaMantenimiento}");
+        }
+
+        public void DemostrarAccesoDesdeClase()
+        {
+            // Acceso a atributos y métodos desde dentro de la clase
+            numeroDeSerie = "12345";
+            modeloDispositivo = "ModeloX";
+            fechaMantenimiento = new DateTime(2024, 10, 25, 10, 0, 0);
+
+            Console.WriteLine("Demostración de acceso desde la clase:");
+            MostrarNumeroDeSerie();
+            MostrarModelo();
+            MostrarFechaDeMantenimiento();
+
+            // Todos los miembros son accesibles desde aquí 
+            // No presentan ningún error en este punto del código
+        }
     }
 }

@@ -1,7 +1,10 @@
-﻿public class Program
+﻿namespace Ejemplos.C5_HERENCIA
 {
-    public static void Main()
+    public class Program
     {
-       
+        public static void Main()
+        {
+        
+        }
     }
 }
