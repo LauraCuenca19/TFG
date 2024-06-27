@@ -40,10 +40,10 @@ C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\D
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\Debug\net7.0\C5_POLIMORFISMO.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\Debug\net7.0\C5_POLIMORFISMO.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\Debug\net7.0\ref\C5_POLIMORFISMO.dll
-C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\C5_HERENCIA.deps.json
-C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\C5_HERENCIA.runtimeconfig.json
-C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\C5_HERENCIA.exe
-C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\C5_HERENCIA.dll
-C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\C5_HERENCIA.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\Debug\net7.0\C5_POLIMORFISMO.csproj.AssemblyReference.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\obj\Debug\net7.0\C5_POLIMORFISMO.csproj.CopyComplete
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\AR5_POLIMORFISMOESTATICO.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\AR5_POLIMORFISMOESTATICO.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\AR5_POLIMORFISMOESTATICO.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\AR5_POLIMORFISMOESTATICO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C5_POLIMORFISMO\bin\Debug\net7.0\AR5_POLIMORFISMOESTATICO.pdb

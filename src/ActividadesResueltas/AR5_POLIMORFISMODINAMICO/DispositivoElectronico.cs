@@ -1,72 +1,64 @@
-public class DispositivoElectronico
+namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
 {
-    // Atributos privados
-    private bool estado;
-    private string tipoDispositivo;
-    
-    // Atributo estático para contar dispositivos
-    private static int contadorDispositivos = 0;
-    
-    // Propiedad pública para acceder al estado del dispositivo
-    public bool Estado
+    public class DispositivoElectronico
     {
-        get { return estado; }
-        private set { estado = value; }
-    }
-
-    // Propiedad pública para acceder al tipo del dispositivo
-    public string TipoDispositivo
-    {
-        get { return tipoDispositivo; }
-        set { 
-            if (value == "Sensor" || value == "Actuador")
-            {
-                tipoDispositivo = value; 
-            } 
-            else 
-            {
-                Console.WriteLine("El tipo de dispositivo electrónico no es válido.");
-                tipoDispositivo = "Por determinar";
-            }
+        // Atributos privados
+        private bool estado;
+        private string dispositivoID;
+        private static int contadorDispositivos = 0;
+        
+        // Propiedad para acceder al estado del dispositivo
+        public bool Estado
+        {
+            get { return estado; }
+            private set { estado = value; }
         }
-    }
 
-    // Propiedad automática para el fabricante
-    public string Fabricante { get; set; }
+        // Propiedad (solo lectura) para obtener el id del dispositivo
+        public string DispositivoID
+        {
+            get { return dispositivoID; }
+        }
 
-    // Constructor para inicializar tipo y fabricante
-    public DispositivoElectronico(string tipo, string fabricante)
-    {
-        TipoDispositivo = tipo;
-        Fabricante = fabricante;
-        estado = false;
-        contadorDispositivos++;
-        Console.WriteLine("Dispositivo con valores especificados.");
-    }
+        // Propiedad automática para el fabricante
+        public string Fabricante { get; set; }
 
-    // Método estático para obtener el número de dispositivos
-    public static void ObtenerTotalDispositivos()
-    {
-        Console.WriteLine($"Hay {contadorDispositivos} dispositivos en el sistema.");
-    }
+        // Constructores
+        public DispositivoElectronico(string dispositivoID, bool estado)  
+        {
+            contadorDispositivos++;
+            this.dispositivoID = dispositivoID;
+            this.estado = estado;
+        }
+        public DispositivoElectronico(string dispositivoID, string fabricante) : this(dispositivoID, false)
+        {
+            Fabricante = fabricante;
+        }
 
-    // Método público para activar el dispositivo
-    public void Activar()
-    {
-        Estado = true;
-        Console.WriteLine("El dispositivo se ha activado.");
-    }
+        // Método estático para obtener el número de dispositivos
+        public static void ObtenerTotalDispositivos()
+        {
+            Console.WriteLine($"Hay {contadorDispositivos} dispositivos en el sistema.");
+        }
 
-    // Método público para desactivar el dispositivo
-    public void Desactivar()
-    {
-        Estado = false;
-        Console.WriteLine("El dispositivo se ha desactivado.");
-    }
+        // Método público para activar el dispositivo
+        public void Activar()
+        {
+            Estado = true;
+            Console.WriteLine("El dispositivo se ha activado.");
+        }
 
-    // Sobrescritura del método ToString de la clase Object
-    public override string ToString()
-    {
-        return $"Tipo: {tipoDispositivo}, Estado: {estado}";
+        // Método público para desactivar el dispositivo
+        public void Desactivar()
+        {
+            Estado = false;
+            Console.WriteLine("El dispositivo se ha desactivado.");
+        }
+
+        // Representación textual de la información del objeto
+        public override string ToString()
+        {
+            return $"ID: {dispositivoID}, Estado: {estado}";
+        }
     }
 }

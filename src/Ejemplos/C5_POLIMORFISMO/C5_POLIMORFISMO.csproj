@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\C5_HERENCIA\C5_HERENCIA.csproj" />
+    <ProjectReference Include="..\..\ActividadesResueltas\AR5_POLIMORFISMOESTATICO\AR5_POLIMORFISMOESTATICO.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

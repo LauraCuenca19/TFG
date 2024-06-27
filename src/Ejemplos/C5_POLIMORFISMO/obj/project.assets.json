@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "C5_HERENCIA/1.0.0": {
+      "AR5_POLIMORFISMOESTATICO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/C5_HERENCIA.dll": {}
+          "bin/placeholder/AR5_POLIMORFISMOESTATICO.dll": {}
         },
         "runtime": {
-          "bin/placeholder/C5_HERENCIA.dll": {}
+          "bin/placeholder/AR5_POLIMORFISMOESTATICO.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "C5_HERENCIA/1.0.0": {
+    "AR5_POLIMORFISMOESTATICO/1.0.0": {
       "type": "project",
-      "path": "../C5_HERENCIA/C5_HERENCIA.csproj",
-      "msbuildProject": "../C5_HERENCIA/C5_HERENCIA.csproj"
+      "path": "../../ActividadesResueltas/AR5_POLIMORFISMOESTATICO/AR5_POLIMORFISMOESTATICO.csproj",
+      "msbuildProject": "../../ActividadesResueltas/AR5_POLIMORFISMOESTATICO/AR5_POLIMORFISMOESTATICO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "C5_HERENCIA >= 1.0.0"
+      "AR5_POLIMORFISMOESTATICO >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -51,8 +51,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C5_HERENCIA\\C5_HERENCIA.csproj": {
-              "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\Ejemplos\\C5_HERENCIA\\C5_HERENCIA.csproj"
+            "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\ActividadesResueltas\\AR5_POLIMORFISMOESTATICO\\AR5_POLIMORFISMOESTATICO.csproj": {
+              "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\ActividadesResueltas\\AR5_POLIMORFISMOESTATICO\\AR5_POLIMORFISMOESTATICO.csproj"
             }
           }
         }

@@ -1,22 +1,28 @@
-﻿public class Program
+﻿namespace Ejemplos.C5_POLIMORFISMODINAMICO
 {
-    public static void Main()
+    public class Program
     {
-        // Crear una instancia de Sensor
-        Sensor sensor = new Sensor("Temperatura", "Honeywell","°C");
-        // Crear una instancia de SensorTemperatura
-        SensorTemperatura sensorTemp = new SensorTemperatura("Honeywell","°C");
+        public static void Main()
+        {
+            // Crear un array de sensores
+            Sensor[] sensores = new Sensor[2];
 
-        // Operaciones sobre el objeto de la clase Sensor
-        Console.WriteLine("\nOperaciones sobre el objeto de la clase Sensor:");
-        sensor.Activar();
-        sensor.Calibrar();
-        sensor.Medir(); // Llamada al método de la clase base.
+            // Crear una instancia de Sensor
+            Sensor sensor1 = new Sensor("Sensor1", "Honeywell","°C");
+            // Crear una instancia de SensorTemperatura
+            SensorTemperatura sensor2 = new SensorTemperatura("SensorTemperatura1","Honeywell","°C");
 
-        // Operaciones sobre el objeto de la clase SensorTemperatura
-        Console.WriteLine("\nOperaciones sobre el objeto de la clase SensorTemperatura:");
-        sensorTemp.Activar();
-        sensorTemp.Calibrar();
-        sensorTemp.Medir(); // Llamada al método sobrescrito en la clase derivada
+            // Inicializar el array con instancias de SensorTemperatura y SensorHumedad
+            sensores[0] = sensor1;
+            sensores[1] = sensor2;
+
+            for (int i = 0; i < sensores.Length; i++)
+            {
+                Console.WriteLine($"\nOperaciones sobre el dispositivo: {sensores[i].DispositivoID}");
+                sensores[i].Activar();
+                sensores[i].Calibrar();
+                sensores[i].Medir(); // Llamada al método correspondiente
+            }
+        }
     }
 }

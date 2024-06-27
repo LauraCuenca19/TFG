@@ -1,4 +1,4 @@
-using Ejemplos.C5_HERENCIA;
+using ActividadesResueltas.AR5_POLIMORFISMOESTATICO;
 
 namespace Ejemplos.C5_POLIMORFISMO
 {
@@ -47,19 +47,12 @@ namespace Ejemplos.C5_POLIMORFISMO
             temperatura = 0.0;
         }
 
-        // Método para medir y actualizar la temperatura del sensor
-        public void MedirTemperatura()
-        {
-            double valor = ObtenerValor();
-            Temperatura = valor;
-        }
-
         public double ObtenerValor()
         {
             Console.WriteLine("Llamada al método de la clase SensorTemperatura:");
             Random rand = new Random();
-            // Genera un valor aleatorio entre 20 y 30
-            double valor = Math.Round(20 + rand.NextDouble() * 10, 2);
+            // Genera un valor aleatorio entre 10 y 30
+            double valor = Math.Round(10 + rand.NextDouble() * 20, 2);
             return valor;
         }
     }

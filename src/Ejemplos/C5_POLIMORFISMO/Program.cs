@@ -1,4 +1,4 @@
-﻿using Ejemplos.C5_HERENCIA;
+﻿using ActividadesResueltas.AR5_POLIMORFISMOESTATICO;
 
 namespace Ejemplos.C5_POLIMORFISMO
 {
@@ -20,17 +20,17 @@ namespace Ejemplos.C5_POLIMORFISMO
             // Demostrar el concepto de shadowing (ocultación de métodos)
             // Llamada al método ObtenerValor() usando upcasting (el tipo base Sensor)
             Console.WriteLine("Llamadas al método ObtenerValor() usando upcasting:");
-            Console.WriteLine("SensorTemperatura:");
-            double valorSensorTemperatura = sensores[0].ObtenerValor();
-            Console.WriteLine("SensorHumedad:");
-            double valorSensorHumedad = sensores[1].ObtenerValor();
+            for (int i = 0; i < sensores.Length; i++)
+            {
+                double valor = sensores[i].ObtenerValor();
+                Console.WriteLine($"Valor medido por el sensor {sensores[i].DispositivoID}: {valor}{sensores[i].unidadMedida}");
+            }
             
-
             // Llamada al método ObtenerValor() usando downcasting (el tipo derivado específico)
             Console.WriteLine("\nLlamadas al método ObtenerValor() usando downcasting:");
-            valorSensorTemperatura = ((SensorTemperatura)sensores[0]).ObtenerValor();
+            double valorSensorTemperatura = ((SensorTemperatura)sensores[0]).ObtenerValor();
             Console.WriteLine($"Valor medido por SensorTemperatura: {valorSensorTemperatura}{sensores[0].unidadMedida}");
-            valorSensorHumedad = ((SensorHumedad)sensores[1]).ObtenerValor();
+            double valorSensorHumedad = ((SensorHumedad)sensores[1]).ObtenerValor();
             Console.WriteLine($"Valor medido por SensorHumedad: {valorSensorHumedad}{sensores[1].unidadMedida}");
         }
     }

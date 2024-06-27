@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "C5_HERENCIA/1.0.0": {
+      "AR5_POLIMORFISMOESTATICO/1.0.0": {
         "runtime": {
-          "C5_HERENCIA.dll": {}
+          "AR5_POLIMORFISMOESTATICO.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "C5_HERENCIA/1.0.0": {
+    "AR5_POLIMORFISMOESTATICO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
