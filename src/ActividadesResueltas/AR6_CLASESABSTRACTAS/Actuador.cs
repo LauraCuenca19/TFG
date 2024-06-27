@@ -1,30 +1,32 @@
-public abstract class Actuador : DispositivoElectronico
+using Ejemplos.C6_CLASESABSTRACTAS;
+
+namespace ActividadesResueltas.AR6_CLASESABSTRACTAS
 {
-    // Atributo privado para el estado de emergencia
-    private bool estadoEmergencia;
-
-    // Propiedad para el tipo de actuador
-    public string TipoActuador{ get ; set; }
-
-    // Constructor
-    public Actuador(string tipo, string fabricante) : base("Actuador", fabricante)
+    public abstract class Actuador : DispositivoElectronico
     {
-        TipoActuador = tipo;
-        estadoEmergencia = false;
-    }
+        // Atributo privado para el estado de emergencia
+        private bool estadoEmergencia;
 
-    // Métodos abstractos
-    public override abstract void Activar();
-    public override abstract void Desactivar();
+        // Constructor
+        public Actuador(string dispositivoID, string fabricante) : base(dispositivoID, fabricante)
+        {
+            estadoEmergencia = false;
+        }
 
-    public void ParadaEmergencia()
-    {
-        if (estadoEmergencia) Desactivar();
-    }
+        // Métodos abstractos
+        public override abstract void Activar();
+        public override abstract void Desactivar();
 
-    // Sobrescritura del método ToString de la clase Object
-    public override string ToString()
-    {
-        return base.ToString() + $", TipoActuador: {TipoActuador}";
+        public void ParadaEmergencia()
+        {
+            if (estadoEmergencia) Desactivar();
+            Console.WriteLine("Parada de emergencia.");
+        }
+
+        // Sobrescritura del método ToString de la clase Object
+        public override string ToString()
+        {
+            return base.ToString() + $", Estado de Emergencia: {estadoEmergencia}";
+        }
     }
 }

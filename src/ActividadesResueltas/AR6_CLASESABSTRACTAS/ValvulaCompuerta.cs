@@ -1,33 +1,36 @@
-public class ValvulaCompuerta : Actuador
+namespace ActividadesResueltas.AR6_CLASESABSTRACTAS
 {
-    // Propiedad para indicar si la válvula está abierta
-    public bool Abierta { get; private set; }
-
-    // Constructor
-    public ValvulaCompuerta(string fabricante) : base("Valvula de compuerta", fabricante)
+    public class ValvulaCompuerta : Actuador
     {
-        Abierta = false;
-    }
+        // Propiedad para indicar si la válvula está abierta
+        public bool Abierta { get; private set; }
 
-    // Método público para activar la válvula
-    public override void Activar()
-    {
-        Estado = true;
-        Abierta = true;
-        Console.WriteLine("La válvula se ha abierto.");
-    }
+        // Constructor
+        public ValvulaCompuerta(string dispositivoID, string fabricante) : base(dispositivoID, fabricante)
+        {
+            Abierta = false;
+        }
 
-    // Método público para desactivar la válvula
-    public override void Desactivar()
-    {
-        Estado = false;
-        Abierta = false;
-        Console.WriteLine("La válvula se ha cerrado.");
-    }
+        // Método público para activar la válvula
+        public override void Activar()
+        {
+            Estado = true;
+            Abierta = true;
+            Console.WriteLine("La válvula se ha abierto.");
+        }
 
-    // Sobrescritura del método ToString
-    public override string ToString()
-    {
-        return base.ToString() + $", Abierta: {Abierta}";
+        // Método público para desactivar la válvula
+        public override void Desactivar()
+        {
+            Estado = false;
+            Abierta = false;
+            Console.WriteLine("La válvula se ha cerrado.");
+        }
+
+        // Sobrescritura del método ToString
+        public override string ToString()
+        {
+            return base.ToString() + $", Abierta: {Abierta}";
+        }
     }
 }

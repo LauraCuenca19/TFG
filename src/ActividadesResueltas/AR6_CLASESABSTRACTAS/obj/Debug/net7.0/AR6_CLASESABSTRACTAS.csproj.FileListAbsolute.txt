@@ -26,3 +26,4 @@ C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_CLASE
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\ref\AR6_CLASESABSTRACTAS.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_CLASESABSTRACTAS\obj\Debug\net7.0\AR6_CLASESABSTRACTAS.csproj.AssemblyReference.cache

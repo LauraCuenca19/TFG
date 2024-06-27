@@ -1,7 +1,14 @@
-﻿class Program
+﻿namespace Ejemplos.C6_CLASESABSTRACTAS
 {
-    static void Main()
+    class Program
     {
-        // Código aquí
+        static void Main()
+        {
+            // DispositivoElectronico dispositivo = new DispositivoElectronico();
+            // Error: Cannot create an instance of the abstract type or interface 'DispositivoElectronico'
+
+            // Sensor sensor= new Sensor();
+            // Error: Cannot create an instance of the abstract type or interface 'Sensor'
+        }
     }
 }
