@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "AR6_CLASESABSTRACTAS/1.0.0": {
-        "dependencies": {
-          "C6_CLASESABSTRACTAS": "1.0.0"
-        },
-        "runtime": {
-          "AR6_CLASESABSTRACTAS.dll": {}
-        }
-      },
       "C6_CLASESABSTRACTAS/1.0.0": {
         "runtime": {
           "C6_CLASESABSTRACTAS.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "AR6_CLASESABSTRACTAS/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "C6_CLASESABSTRACTAS/1.0.0": {
       "type": "project",
       "serviceable": false,

@@ -26,3 +26,10 @@ C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTER
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\obj\Debug\net7.0\ref\AR6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\bin\Debug\net7.0\C6_INTERFACES.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\bin\Debug\net7.0\C6_INTERFACES.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\bin\Debug\net7.0\C6_INTERFACES.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\bin\Debug\net7.0\C6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\bin\Debug\net7.0\C6_INTERFACES.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.csproj.AssemblyReference.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR6_INTERFACES\obj\Debug\net7.0\AR6_INTERFACES.csproj.CopyComplete

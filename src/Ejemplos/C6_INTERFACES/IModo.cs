@@ -1,8 +1,11 @@
-public interface IModo
+namespace Ejemplos.C6_INTERFACES
 {
-    // Propiedad para indicar modo de funcionamiento
-    bool ModoAuto { get; set; }
+    public interface IModo
+    {
+        // Propiedad para indicar modo de funcionamiento
+        bool ModoAuto { get; set; }
 
-    // Método para definir la lógica del modo automático del actuador
-    void ModoAutomatico();
+        // Método para definir la lógica del modo automático del actuador
+        void ModoAutomatico();
+    }
 }
