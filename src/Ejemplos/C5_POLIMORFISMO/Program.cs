@@ -1,21 +1,37 @@
-﻿class Program
+﻿using Ejemplos.C5_HERENCIA;
+
+namespace Ejemplos.C5_POLIMORFISMO
 {
-    static void Main()
+    class Program
     {
-        // Creación objeto de la clase base Sensor
-        Sensor sensor = new Sensor("Temperatura","Honeywell","°C");
+        static void Main()
+        {
+            // Crear un array de sensores
+            Sensor[] sensores = new Sensor[2];
+            
+            // Crear dos sensores: uno de temperatura y uno de humedad
+            SensorTemperatura sensor1 = new SensorTemperatura("sT1", "Fabricante A", "°C");
+            SensorHumedad sensor2 = new SensorHumedad("sH1", "Fabricante B", "%");
 
-        // Creación objeto de la clase derivada SensorTemperatura
-        SensorTemperatura sensorTemp = new SensorTemperatura("Honeywell","°C");
+            // Inicializar el array con instancias de SensorTemperatura y SensorHumedad
+            sensores[0] = sensor1;
+            sensores[1] = sensor2;
 
-        Medir(sensor); // Medida con objeto de la clase base
-        Medir(sensorTemp); // Medida con objeto de la clase derivada
-    }
+            // Demostrar el concepto de shadowing (ocultación de métodos)
+            // Llamada al método ObtenerValor() usando upcasting (el tipo base Sensor)
+            Console.WriteLine("Llamadas al método ObtenerValor() usando upcasting:");
+            Console.WriteLine("SensorTemperatura:");
+            double valorSensorTemperatura = sensores[0].ObtenerValor();
+            Console.WriteLine("SensorHumedad:");
+            double valorSensorHumedad = sensores[1].ObtenerValor();
+            
 
-    // Polimorfismo
-    static void Medir(Sensor sensor)
-    {
-        double valor = sensor.ObtenerValor();  // Llamada al método ObtenerValor
-        Console.WriteLine($"Medida del sensor: {valor}{sensor.unidades}");
+            // Llamada al método ObtenerValor() usando downcasting (el tipo derivado específico)
+            Console.WriteLine("\nLlamadas al método ObtenerValor() usando downcasting:");
+            valorSensorTemperatura = ((SensorTemperatura)sensores[0]).ObtenerValor();
+            Console.WriteLine($"Valor medido por SensorTemperatura: {valorSensorTemperatura}{sensores[0].unidadMedida}");
+            valorSensorHumedad = ((SensorHumedad)sensores[1]).ObtenerValor();
+            Console.WriteLine($"Valor medido por SensorHumedad: {valorSensorHumedad}{sensores[1].unidadMedida}");
+        }
     }
 }

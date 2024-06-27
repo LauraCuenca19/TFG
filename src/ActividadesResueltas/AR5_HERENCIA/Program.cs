@@ -4,9 +4,9 @@
     {
         static void Main()
         {
-            // Crear dos sensores de temperatura
+            // Crear dos sensores
             SensorTemperatura sensor1 = new SensorTemperatura("sT1", "Fabricante A", "°C");
-            SensorTemperatura sensor2 = new SensorTemperatura("sT2", "Fabricante B", "°C");
+            SensorHumedad sensor2 = new SensorHumedad("sH1", "Fabricante B", "%");
 
             // Activar los sensores
             sensor1.Activar();
@@ -16,9 +16,9 @@
             sensor1.Calibrar();
             sensor2.Calibrar();
 
-            // Medir la temperatura con cada sensor
+            // Medir con cada sensor
             sensor1.MedirTemperatura();
-            sensor2.MedirTemperatura();
+            sensor2.MedirHumedad();
 
             // Intentar actualizar la temperatura fuera de rango
             sensor1.Temperatura = 105.0;
@@ -27,8 +27,8 @@
             sensor1.Desactivar();
             sensor2.Desactivar();
 
-            // Intentar actualizar la temperatura con sensor desactivado
-            sensor1.Temperatura = 50.0;
+            // Intentar actualizar la humedad con sensor desactivado
+            sensor2.Humedad = 50.0;
         }
     }
 }
