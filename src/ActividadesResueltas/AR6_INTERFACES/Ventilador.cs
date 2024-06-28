@@ -103,7 +103,7 @@ namespace ActividadesResueltas.AR6_INTERFACES
                             Console.WriteLine("Temperatura inválida. Saliendo del modo automático.");
                             ModoAuto = false;
                         }
-                    }
+                    } else ModoAuto = false;
                 } else Desactivar(); // Código para desactivar el ventilador
                 // Esperar un poco antes de la siguiente verificación
                 System.Threading.Thread.Sleep(2000);

@@ -32,12 +32,11 @@ namespace ActividadesResueltas.AR5_POLIMORFISMOESTATICO
         }
 
         // Método público para obtener un valor simulado de medida
-        public double ObtenerValor()
+        public void ObtenerValor()
         {
             Random rand = new Random(); // Crea una instancia de la clase Random para generar valores aleatorios
             // Genera un valor aleatorio entre 0 y 100
-            double valor = Math.Round(rand.NextDouble() * 100, 2);  // Redondea el valor a 2 decimales
-            return valor;
+            Medida = Math.Round(rand.NextDouble() * 100, 2);  // Redondea el valor a 2 decimales;
         }
 
         // Método sobrecargado Medir
@@ -57,7 +56,7 @@ namespace ActividadesResueltas.AR5_POLIMORFISMOESTATICO
             Console.WriteLine($"Tomando medidas durante {duracion} segundos:");
             for (int i = 0; i < duracion; i++)
             {
-                Medida = ObtenerValor();
+                ObtenerValor();
                 instanteMedida = DateTime.Now;
                 Console.WriteLine($"{instanteMedida} - Medida {i + 1}: {Medida}{unidadMedida}");
                 System.Threading.Thread.Sleep(1000); // Simula una espera de 1 segundo entre medidas
@@ -80,7 +79,7 @@ namespace ActividadesResueltas.AR5_POLIMORFISMOESTATICO
             Console.WriteLine($"Tomando {numMedidas} medidas, una cada {frecuencia} segundos:");
             for (int i = 0; i < numMedidas; i++)
             {
-                Medida = ObtenerValor();
+                ObtenerValor();
                 instanteMedida = DateTime.Now;
                 Console.WriteLine($"{instanteMedida} - Medida {i + 1}: {Medida}{unidadMedida}");
                 System.Threading.Thread.Sleep(frecuencia * 1000);
@@ -100,7 +99,7 @@ namespace ActividadesResueltas.AR5_POLIMORFISMOESTATICO
                 Console.WriteLine("No se puede tomar la medida porque el sensor no está calibrado.");
                 return;
             }
-            Medida = ObtenerValor();
+            ObtenerValor();
             instanteMedida = DateTime.Now;
             Console.WriteLine($"{instanteMedida} - Medida puntual del sensor: {Medida}°C");
         }

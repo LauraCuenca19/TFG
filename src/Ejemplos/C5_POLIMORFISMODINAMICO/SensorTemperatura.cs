@@ -45,13 +45,12 @@ namespace Ejemplos.C5_POLIMORFISMODINAMICO
             temperatura = 0.0;
         }
 
-        public override double ObtenerValor()
+        public override void ObtenerValor()
         {
             Console.WriteLine("Llamada al método de la clase SensorTemperatura:");
             Random rand = new Random();
             // Genera un valor aleatorio entre 10 y 30
-            double valor = Math.Round(10 + rand.NextDouble() * 20, 2);
-            return valor;
+            Medida = Math.Round(10 + rand.NextDouble() * 20, 2);
         }
 
         // Representación textual de la información del objeto

@@ -1,10 +1,39 @@
 namespace Ejemplos.C6_INTERFACES
 {
-    public class SensorTemperatura : Sensor
+    public class SensorTemperatura : Sensor, IModo
     {
         // Atributos privados
-        private double temperatura; // almacenar valor de temperatura
-        private bool modoAuto; // almacenar el modo
+        private double temperatura;
+        private bool modoAuto;
+
+        // Implementación propiedad ModoAuto de la interfaz IModo
+        public bool ModoAuto 
+        { 
+            get {return modoAuto;} 
+            set
+            {
+                if(!Estado)
+                {
+                    Console.WriteLine("No se puede cambiar el modo de funcionamiento porque el sensor está apagado.");
+                }
+                else if (!Calibrado)
+                {
+                    Console.WriteLine("No se puede cambiar el modo de funcionamiento con el sensor sin calibrar.");
+                }
+                else
+                {
+                    modoAuto = value;
+                    if (modoAuto)
+                    {
+                        Console.WriteLine($"{DispositivoID} operando en modo automático.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{DispositivoID} operando en modo manual.");
+                    }
+                }
+            } 
+        }
 
         // Propiedad para la temperatura con validación en el setter
         public double Temperatura
@@ -39,36 +68,7 @@ namespace Ejemplos.C6_INTERFACES
             }
         }
 
-        // Implementación propiedad ModoAuto de la interfaz IModo
-        public bool ModoAuto 
-        { 
-            get {return modoAuto;} 
-            set
-            {
-                if(!Estado)
-                {
-                    Console.WriteLine("No se puede cambiar el modo de funcionamiento porque el sensor está apagado.");
-                }
-                else if (!Calibrado)
-                {
-                    Console.WriteLine("No se puede cambiar el modo de funcionamiento con el sensor sin calibrar.");
-                }
-                else
-                {
-                    modoAuto = value;
-                    if (modoAuto)
-                    {
-                        Console.WriteLine($"{DispositivoID} operando en modo automático.");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{DispositivoID} operando en modo manual.");
-                    }
-                }
-            } 
-        }
-
-        // Constructor
+        // Constructor que inicializa el sensor con tipo "Temperatura"
         public SensorTemperatura(string dispositivoID, string fabricante, string unidadMedida) : base(dispositivoID, fabricante, unidadMedida)
         {
             // Inicializa la temperatura a 0.0
@@ -89,7 +89,8 @@ namespace Ejemplos.C6_INTERFACES
                 // Simula la lectura de 5 valores de temperatura
                 for (int i = 0; i < lecturas.Length; i++)
                 {
-                    lecturas[i] = ObtenerValor();
+                    ObtenerValor();
+                    lecturas[i] = Temperatura;
                     Console.WriteLine($"Lectura {i + 1}: {lecturas[i]:F2}{unidadMedida}");
                     suma += lecturas[i];
                     System.Threading.Thread.Sleep(500); // Simulación tiempo entre lecturas
@@ -110,12 +111,12 @@ namespace Ejemplos.C6_INTERFACES
             }
         }
 
-        public override double ObtenerValor()
+        public override void ObtenerValor()
         {
             Random rand = new Random();
             // Genera un valor aleatorio entre 10 y 30
-            double valor = Math.Round(10 + rand.NextDouble() * 20, 2);
-            return valor;
+            Medida = Math.Round(10 + rand.NextDouble() * 20, 2);
+            Temperatura = Medida;
         }
 
         // Representación textual de la información del objeto

@@ -40,13 +40,13 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
             humedad = 0.0; // El nivel de humedad inicia en 0.0
         }
 
-        public override double ObtenerValor()
+        public override void ObtenerValor()
         {
             Console.WriteLine("Llamada al método de la clase SensorHumedad:");
             Random rand = new Random();
             // Genera un valor aleatorio entre 45 y 85
-            double valor = Math.Round(45 + rand.NextDouble() * 40, 2);
-            return valor;
+            Medida = Math.Round(45 + rand.NextDouble() * 40, 2);
+            Humedad = Medida;
         }
 
         // Método Calibrar sobrescrito
@@ -63,7 +63,8 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
                 // Simula la lectura de 3 valores de humedad
                 for (int i = 0; i < 3; i++)
                 {
-                    lecturas[i] = ObtenerValor();
+                    ObtenerValor();
+                    lecturas[i] = Humedad;
                     Console.WriteLine($"Lectura {i + 1}: {lecturas[i]:F2}{unidadMedida}");
                     suma += lecturas[i];
                     System.Threading.Thread.Sleep(3000); // Espera de 3 segundos entre lecturas
@@ -72,7 +73,8 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
                 double promedio = suma / lecturas.Length;
                 Console.WriteLine($"Promedio de lecturas: {promedio:F2}{unidadMedida}");
 
-                double valorReferencia = ObtenerValor(); // Simulamos tener un valor de referencia
+                Random rand = new Random(); 
+                double valorReferencia = Math.Round(45 + rand.NextDouble() * 40, 2); // Simulamos tener un valor de referencia
                 double factorCalibracion = valorReferencia / promedio; // Calculamos el factor a partir del valor de referencia
                 Console.WriteLine($"Factor de calibración: {factorCalibracion}");
 

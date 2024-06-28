@@ -32,12 +32,11 @@ namespace Ejemplos.C6_INTERFACES
         }
 
         // Método público para obtener un valor simulado de medida
-        public virtual double ObtenerValor()
+        public virtual void ObtenerValor()
         {
             Random rand = new Random();
             // Genera un valor aleatorio entre 0 y 100
-            double valor = Math.Round(rand.NextDouble() * 100, 2);
-            return valor;
+            Medida = Math.Round(rand.NextDouble() * 100, 2);
         }
 
         // Método para realizar medición continua durante un tiempo
@@ -56,7 +55,7 @@ namespace Ejemplos.C6_INTERFACES
             Console.WriteLine($"Tomando medidas durante {duracion} segundos:");
             for (int i = 0; i < duracion; i++)
             {
-                Medida = ObtenerValor();
+                ObtenerValor();
                 instanteMedida = DateTime.Now;
                 Console.WriteLine($"{instanteMedida} - Medida {i + 1}: {Medida}{unidadMedida}");
                 System.Threading.Thread.Sleep(1000);
@@ -79,7 +78,7 @@ namespace Ejemplos.C6_INTERFACES
             Console.WriteLine($"Tomando {numMedidas} medidas, una cada {frecuencia} segundos:");
             for (int i = 0; i < numMedidas; i++)
             {
-                Medida = ObtenerValor();
+                ObtenerValor();
                 instanteMedida = DateTime.Now;
                 Console.WriteLine($"{instanteMedida} - Medida {i + 1}: {Medida}{unidadMedida}");
                 System.Threading.Thread.Sleep(frecuencia * 1000);
@@ -99,7 +98,7 @@ namespace Ejemplos.C6_INTERFACES
                 Console.WriteLine("No se puede tomar la medida porque el sensor no está calibrado.");
                 return;
             }
-            Medida = ObtenerValor();
+            ObtenerValor();
             instanteMedida = DateTime.Now;
             Console.WriteLine($"{instanteMedida} - Medida puntual del sensor: {Medida}°C");
         }

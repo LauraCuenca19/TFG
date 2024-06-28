@@ -17,7 +17,7 @@ class Program
         
         // Añade más elementos a la lista
         lista.Add("Condensador");
-        lista.Add(0.001); // Ohmios
+        lista.Add(0.001); // microfaradios
 
         // Recupera elementos de la lista utilizando índices
         string componente = (string)lista[0]; // Casting
@@ -53,7 +53,7 @@ class Program
 
         // Agregar algunos sensores y sus valores iniciales
         tabla.Add("SensorTemperatura", 22.5); // Temperatura
-        tabla["SensorHumedad"] = 45.2;  // Humedad
+        tabla["SensorHumedad"] = 68.5;  // Humedad
 
         // Leer los valores actuales de los sensores
         Console.WriteLine($"Valor de SensorTemperatura: {tabla["SensorTemperatura"]}°C");

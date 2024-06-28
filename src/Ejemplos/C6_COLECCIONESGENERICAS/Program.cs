@@ -60,7 +60,7 @@ public class Program
 
         // Agregar algunos sensores y sus valores iniciales
         diccionario.Add("SensorTemperatura", 22.5); // Temperatura
-        diccionario["SensorHumedad"] = 45.2;  // Humedad
+        diccionario["SensorHumedad"] = 68.5;  // Humedad
 
         // Leer los valores actuales de los sensores
         Console.WriteLine($"Valor de SensorTemperatura: {diccionario["SensorTemperatura"]}°C");

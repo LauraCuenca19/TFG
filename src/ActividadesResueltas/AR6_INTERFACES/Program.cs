@@ -5,7 +5,7 @@
         static void Main()
         {
             // Crear objeto de la clase ventilador
-            Ventilador ventilador = new Ventilador("V1", "FabricanteA", 475, 20);
+            Ventilador ventilador = new Ventilador("V1", "FabricanteA", 475, 25);
             
             // Activar el ventilador
             ventilador.Activar();

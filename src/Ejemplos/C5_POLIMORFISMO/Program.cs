@@ -22,16 +22,19 @@ namespace Ejemplos.C5_POLIMORFISMO
             Console.WriteLine("Llamadas al método ObtenerValor() usando upcasting:");
             for (int i = 0; i < sensores.Length; i++)
             {
-                double valor = sensores[i].ObtenerValor();
-                Console.WriteLine($"Valor medido por el sensor {sensores[i].DispositivoID}: {valor}{sensores[i].unidadMedida}");
+                sensores[i].Activar();
+                sensores[i].Calibrar();
+                Console.WriteLine($"Valor medido por el sensor {sensores[i].DispositivoID}:");
+                sensores[i].Medir();
+
             }
             
             // Llamada al método ObtenerValor() usando downcasting (el tipo derivado específico)
             Console.WriteLine("\nLlamadas al método ObtenerValor() usando downcasting:");
-            double valorSensorTemperatura = ((SensorTemperatura)sensores[0]).ObtenerValor();
-            Console.WriteLine($"Valor medido por el sensor {sensores[0].DispositivoID}: {valorSensorTemperatura}{sensores[0].unidadMedida}");
-            double valorSensorHumedad = ((SensorHumedad)sensores[1]).ObtenerValor();
-            Console.WriteLine($"Valor medido por el sensor {sensores[1].DispositivoID}: {valorSensorHumedad}{sensores[1].unidadMedida}");
+            ((SensorTemperatura)sensores[0]).ObtenerValor();
+            Console.WriteLine($"Valor medido por el sensor {sensores[0].DispositivoID}: {sensores[0].Medida}{sensores[1].unidadMedida}");
+            ((SensorHumedad)sensores[1]).ObtenerValor();
+            Console.WriteLine($"Valor medido por el sensor {sensores[1].DispositivoID}: {sensores[0].Medida}{sensores[1].unidadMedida}");
         }
     }
 }

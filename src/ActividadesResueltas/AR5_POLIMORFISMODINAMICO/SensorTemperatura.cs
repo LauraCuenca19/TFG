@@ -59,7 +59,8 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
                 // Simula la lectura de 5 valores de temperatura
                 for (int i = 0; i < lecturas.Length; i++)
                 {
-                    lecturas[i] = ObtenerValor();
+                    ObtenerValor();
+                    lecturas[i] = Temperatura;
                     Console.WriteLine($"Lectura {i + 1}: {lecturas[i]:F2}{unidadMedida}");
                     suma += lecturas[i];
                     System.Threading.Thread.Sleep(500); // Simulación tiempo entre lecturas
@@ -80,12 +81,12 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
             }
         }
 
-        public override double ObtenerValor()
+        public override void ObtenerValor()
         {
             Random rand = new Random();
             // Genera un valor aleatorio entre 10 y 30
-            double valor = Math.Round(10 + rand.NextDouble() * 20, 2);
-            return valor;
+            Medida = Math.Round(10 + rand.NextDouble() * 20, 2);
+            Temperatura = Medida;
         }
 
         // Representación textual de la información del objeto

@@ -42,20 +42,13 @@ namespace Ejemplos.C5_POLIMORFISMO
             humedad = 0.0; // El nivel de humedad inicia en 0.0
         }
 
-        // Método para medir y actualizar el nivel de humedad del sensor
-        public void MedirHumedad()
-        {
-            double valor = ObtenerValor();
-            Humedad = valor;
-        }
-
-        public double ObtenerValor()
+        public void ObtenerValor()
         {
             Console.WriteLine("Llamada al método de la clase SensorHumedad:");
             Random rand = new Random();
             // Genera un valor aleatorio entre 45 y 85
-            double valor = Math.Round(45 + rand.NextDouble() * 40, 2);
-            return valor;
+            Medida = Math.Round(45 + rand.NextDouble() * 40, 2);
+            Humedad = Medida;
         }
     }
 }
