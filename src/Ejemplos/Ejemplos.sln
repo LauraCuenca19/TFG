@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4_CLASESESTATICAS", "C4_CL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C6_COLECCIONESCONOBJETOS", "C6_COLECCIONESCONOBJETOS\C6_COLECCIONESCONOBJETOS.csproj", "{6E66323E-574F-4DCB-B72F-48277E4CE46E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EP1", "..\EjerciciosPropuestos\EP1\EP1.csproj", "{76E1BAAE-A3A6-48A6-A5A8-973FD1E90957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{6E66323E-574F-4DCB-B72F-48277E4CE46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E66323E-574F-4DCB-B72F-48277E4CE46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E66323E-574F-4DCB-B72F-48277E4CE46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E1BAAE-A3A6-48A6-A5A8-973FD1E90957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E1BAAE-A3A6-48A6-A5A8-973FD1E90957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E1BAAE-A3A6-48A6-A5A8-973FD1E90957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E1BAAE-A3A6-48A6-A5A8-973FD1E90957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
