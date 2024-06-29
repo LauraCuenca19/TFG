@@ -1,0 +1,21 @@
+Ejercicio Propuesto 5: Gestión de Inventario
+
+En una fábrica, es esencial gestionar el inventario de manera eficiente para asegurar que los materiales y productos estén disponibles cuando se necesiten. 
+Tu tarea es implementar una clase que modele los ítems de inventario y utilizar colecciones genéricas (List<T>) para gestionar una lista de ítems.
+
+Requisitos del Ejercicio
+
+1. Define la Interfaz ItemInventario que incluya las siguientes propiedades:
+    * Id (string): Identificador único del ítem.
+    * Descripcion (string): Descripción del ítem.
+    * Cantidad (int): Cantidad disponible del ítem.
+
+2. Define la clase Inventario ue utilizará una lista genérica (List<T>) para gestionar los ítems. Debe proporcionar los siguientes métodos:
+    * AgregarItem(ItemInventario item): Agregar un ítem al inventario y mostrar un mensaje indicando que el ítem ha sido agregado.
+    * EliminarItem(string id): Eliminar un ítem de la lista utilizando su Id como referencia. 
+        Si el ítem es encontrado y eliminado, se debe mostrar un mensaje indicando el éxito de la operación. 
+        Si no se encuentra el ítem, se debe mostrar un mensaje indicando que no se encontró.
+    * MostrarInventario(): Mostrar la información de todos los ítems presentes en el inventario.
+    * BuscarItemPorId(string id) debe buscar y devolver un ítem específico por su Id, devolviendo null si el ítem no se encuentra.
+
+Notas Adicionales: Incluye todas las clases e interfaces dentro del mismo namespace (AplicacionInventario) para facilitar su uso en próximos ejercicios.

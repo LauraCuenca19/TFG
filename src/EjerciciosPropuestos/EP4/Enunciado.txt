@@ -1,0 +1,42 @@
+Ejercicio Propuesto 4: Simulación de Línea de Producción Automatizada con Robots
+
+En una línea de producción automatizada, se desea simular el proceso de fabricación de diferentes piezas utilizando robots especializados. 
+Cada robot tiene una función específica: el RobotSoldadura se encarga de soldar piezas que lo requieran, 
+mientras que el RobotPintura se encarga de aplicar pintura a las piezas que necesiten este proceso. 
+Como ingeniero encargado de automatización, tu tarea es implementar una jerarquía de clases que modele estos robots y 
+reflejar el posible flujo de trabajo en la línea de producción automatizada.
+
+Requisitos del Ejercicio
+
+1. Define una clase base Robot que contenga:
+
+    * Propiedad Modelo (string) de solo lectura, que establezca su contenido en el constructor de la clase.
+    * Método RealizarTarea() que deberá ser implementado por todas las clases derivadas.
+
+2. Define dos clases RobotSoldadura y RobotPintura que hereden de la clase Robot:
+
+    Ambas deben establecer la inicialización de sus objetos llamando al constructor de la clase base 
+    e implementar el método RealizarTarea() para simular el proceso de soldadura o de aplicación de pintura en una pieza específica. 
+    Deben mostrar un mensaje indicando el inicio y fin del proceso.
+
+3. Define una clase Pieza que contenga los siguientes miembros:
+
+    * Propiedades (las de solo lectura deben inicializarse con parámetros en el constructor):
+        - Tipo (string): El tipo de pieza, solo lectura.
+        - NecesitaSoldadura (bool): Indica si la pieza necesita ser soldada, solo lectura.
+        - NecesitaPintura (bool): Indica si la pieza necesita ser pintada, solo lectura.
+        - Soldada (bool): Indica si la pieza ha sido soldada. Estado inicial: false.
+        - Pintada (bool): Indica si la pieza ha sido pintada. Estado inicial: false.
+    * Método ToString(): Describe el estado actual de la pieza (Soldada y Pintada).
+
+4. Clase Program (Main):
+
+    Crea al menos una instancia de cada de robot (RobotSoldadura y RobotPintura).
+    Crea una lista de objetos Pieza que representen diferentes partes a ensamblar en la línea de producción.
+    Para cada pieza en la lista:
+        - Verifica si necesita soldadura y/o pintura.
+        - Utiliza los robots correspondientes para realizar las tareas necesarias.
+        - Actualiza el estado de la pieza (Soldada y Pintada) después de cada proceso.
+    Muestra el estado final de las piezas después de haber sido procesadas.
+
+Notas Adicionales: Utiliza Thread.Sleep para la simulación de tiempo en los procesos.

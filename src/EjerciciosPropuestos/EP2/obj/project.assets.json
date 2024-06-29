@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "EP1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/EP1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EP1.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "EP1/1.0.0": {
+      "type": "project",
+      "path": "../EP1/EP1.csproj",
+      "msbuildProject": "../EP1/EP1.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "EP1 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lalac\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\EjerciciosPropuestos\\EP1\\EP1.csproj": {
+              "projectPath": "C:\\Yo\\Universidad\\GRADO\\TFG_23_24\\repoTFG\\TFG\\src\\EjerciciosPropuestos\\EP1\\EP1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
