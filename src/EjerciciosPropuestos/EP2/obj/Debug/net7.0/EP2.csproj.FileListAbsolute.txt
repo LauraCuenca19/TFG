@@ -1,0 +1,14 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\bin\Debug\net7.0\EP2.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\bin\Debug\net7.0\EP2.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\bin\Debug\net7.0\EP2.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\bin\Debug\net7.0\EP2.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\bin\Debug\net7.0\EP2.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\refint\EP2.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\EP2.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP2\obj\Debug\net7.0\ref\EP2.dll

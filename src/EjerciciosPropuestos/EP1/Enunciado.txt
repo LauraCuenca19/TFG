@@ -1,0 +1,30 @@
+Ejercicio Propuesto 1
+
+En una fábrica, es esencial gestionar las órdenes de producción de manera eficiente. 
+Cada orden de producción contiene información sobre el producto a fabricar, la cantidad a producir y el estado actual de la orden. 
+Como ingeniero encargado de este sistema, tu tarea es implementar una clase que encapsule estos datos y 
+proporcione métodos para acceder y modificar la información de manera segura.
+
+Requisitos del Ejercicio:
+
+1. Define una clase OrdenProduccion y selecciona el modificador de acceso adecuado para cada uno de sus miembros:
+
+    * Atributos:
+        - id (int): Un identificador único para la orden de producción. 
+        Su valor será igual al valor de un atributo estático que se incrementa con la creación de un objeto de la clase, 
+        de manera que el primer objeto creado tenga id = 1, el segundo id = 2, y así sucesivamente.
+        - producto (string): El nombre del producto a fabricar.
+        - cliente (string): El nombre del cliente al que se enviará el pedido.
+        - cantidad (int): La cantidad de productos a fabricar.
+        - estado (string): El estado actual de la orden de producción. Puede ser "Pendiente", "En Proceso", "Pausada" o "Completada". 
+        Por defecto, será "Pendiente".
+    * Métodos:
+    Crea los métodos para escribir y leer cada atributo, excepto id, producto y cliente que solo tendrán métodos de lectura.
+    Por ejemplo los métodos para estado podrían ser: ConsultarEstadoActual() y CambiarEstado(string nuevoEstado). No uses propiedades.
+    Incluye un método para mostrar la información de la orden por consola (id, producto, cantidad y estado).
+
+2. Clase Program (Main):
+
+    Crea varias instancias de OrdenProduccion.
+    Utiliza los métodos para acceder y modificar los atributos de las órdenes de producción.
+    Muestra la información de las órdenes antes y después de las modificaciones.
