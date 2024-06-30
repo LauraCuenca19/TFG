@@ -12,7 +12,7 @@ public abstract class ProductoTerminado : ItemInventario
         set { value = this.GetType().Name; } 
     }
     public int Cantidad { get; set; }
-    public decimal PrecioUnitario { get; protected set; }
+    public decimal PrecioUnitario { get; set; }
 
     public ProductoTerminado(string id, int cantidad, decimal precioUnitario)
     {
@@ -21,7 +21,14 @@ public abstract class ProductoTerminado : ItemInventario
         PrecioUnitario = precioUnitario;
     }
 
-    public abstract void Produccion(int cantidadProductos, Parte parte1, Parte parte2, Parte parte3);
+    public virtual void Produccion(int cantidadProductos, Parte parte1, Parte parte2, Parte parte3)
+    {
+
+    }
+    public virtual void Produccion(int cantidadProductos, Parte parte1, Parte parte2)
+    {
+
+    }
 
     public void Vender(int cantidad)
     {
