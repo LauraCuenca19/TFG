@@ -1,6 +1,6 @@
-﻿namespace AplicacionInventario;
-
-public class Inventario
+﻿namespace AplicacionInventario
+{
+    public class Inventario
     {
         private List<ItemInventario> items;
 
@@ -49,3 +49,6 @@ public class Inventario
             return null;
         }
     }
+}
+
+

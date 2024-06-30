@@ -1,45 +1,46 @@
 ﻿using AplicacionInventario;
 
-namespace EP5;
-
-// Clase Parte para representar las partes de las sillas y taburetes
-public class Parte : ItemInventario
+namespace EP6
 {
-    public string Id { get; set; }
-    public string Descripcion { get; set; }
-    public int Cantidad { get; set; }
-    public decimal PrecioUnitario { get; set; }
-
-    public Parte(string id, string descripcion, int cantidad, decimal precioUnitario)
+    // Clase Parte para representar las partes de las sillas y taburetes
+    public class Parte : ItemInventario
     {
-        Id = id;
-        Descripcion = descripcion;
-        Cantidad = cantidad;
-        PrecioUnitario = precioUnitario;
-    }
+        public string Id { get; set; }
+        public string Descripcion { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
 
-    public void Reponer(int cantidad)
-    {
-        Cantidad += cantidad;
-        Console.WriteLine($"Se han repuesto {cantidad} unidades de {Id}.");
-    }
-
-    public bool Consumir(int cantidad)
-    {
-        if (Cantidad >= cantidad)
+        public Parte(string id, string descripcion, int cantidad, decimal precioUnitario)
         {
-            Cantidad -= cantidad;
-            return true;
+            Id = id;
+            Descripcion = descripcion;
+            Cantidad = cantidad;
+            PrecioUnitario = precioUnitario;
         }
-        else
-        {
-            Console.WriteLine($"No hay suficientes unidades de {Id} disponibles.");
-            return false;
-        }
-    }
 
-    public override string ToString()
-    {
-        return $"{Id} ({Descripcion}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
+        public void Reponer(int cantidad)
+        {
+            Cantidad += cantidad;
+            Console.WriteLine($"Se han repuesto {cantidad} unidades de {Id}.");
+        }
+
+        public bool Consumir(int cantidad)
+        {
+            if (Cantidad >= cantidad)
+            {
+                Cantidad -= cantidad;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"No hay suficientes unidades de {Id} disponibles.");
+                return false;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Id} ({Descripcion}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
+        }
     }
 }

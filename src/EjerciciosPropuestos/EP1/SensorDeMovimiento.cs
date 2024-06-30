@@ -1,30 +1,31 @@
-﻿namespace EP1;
-
-public class SensorDeMovimiento : Sensor
+﻿namespace EP1
 {
-    private bool estado;
-
-    public bool Estado
+    public class SensorDeMovimiento : Sensor
     {
-        get { return estado; }
-        private set { estado = value; }
-    }
+        private bool estado;
 
-    public override void LeerValor()
-    {
-        DetectarMovimiento();
-    }
-
-    private void DetectarMovimiento()
-    {
-        // Implementación de la detección de movimiento
-        // Aquí puedes simular el cambio de estado
-        int random = new Random().Next(0, 2); // Simulación de detección de movimiento
-        if (random == 1)
+        public bool Estado
         {
-            Estado = true;
-            Console.WriteLine($"Movimiento detectado: {Estado}");
+            get { return estado; }
+            private set { estado = value; }
         }
-        else Console.WriteLine($"Movimiento detectado: {Estado}");
+
+        public override void LeerValor()
+        {
+            DetectarMovimiento();
+        }
+
+        private void DetectarMovimiento()
+        {
+            // Implementación de la detección de movimiento
+            // Aquí puedes simular el cambio de estado
+            int random = new Random().Next(0, 2); // Simulación de detección de movimiento
+            if (random == 1)
+            {
+                Estado = true;
+                Console.WriteLine($"Movimiento detectado: {Estado}");
+            }
+            else Console.WriteLine($"Movimiento detectado: {Estado}");
+        }
     }
 }

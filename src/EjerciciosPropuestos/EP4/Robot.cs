@@ -1,16 +1,17 @@
-﻿namespace EP3;
-
-public class Robot
+﻿namespace EP4
 {
-    public string Modelo { get; }
-
-    public Robot(string modelo)
+    public class Robot
     {
-        Modelo = modelo;
-    }
+        public string Modelo { get; }
 
-    public virtual void RealizarTarea()
-    {
-        // Método virtual que será sobrescrito en las clases derivadas
+        public Robot(string modelo)
+        {
+            Modelo = modelo;
+        }
+
+        public virtual void RealizarTarea()
+        {
+            // Método virtual que será sobrescrito en las clases derivadas
+        }
     }
 }

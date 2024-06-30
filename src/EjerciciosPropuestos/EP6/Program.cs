@@ -1,5 +1,5 @@
 ﻿using AplicacionInventario;
-using EP5;
+using EP6;
 
 class Program
 {

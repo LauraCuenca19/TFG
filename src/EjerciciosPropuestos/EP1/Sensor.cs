@@ -1,21 +1,22 @@
-﻿namespace EP1;
-
-public abstract class Sensor
+﻿namespace EP1
 {
-    private string id;
-    private string ubicacion;
-
-    public string Id
+    public abstract class Sensor
     {
-        get { return id; }
-        set { id = value; }
-    }
+        private string id;
+        private string ubicacion;
 
-    public string Ubicacion
-    {
-        get { return ubicacion; }
-        set { ubicacion = value; }
-    }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public abstract void LeerValor();
+        public string Ubicacion
+        {
+            get { return ubicacion; }
+            set { ubicacion = value; }
+        }
+
+        public abstract void LeerValor();
+    }
 }

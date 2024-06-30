@@ -1,26 +1,26 @@
-﻿namespace EP1;
-
-public class Luz
+﻿namespace EP1
 {
-    private string id;
-    private float intensidad;
-
-    public string Id
+    public class Luz
     {
-        get { return id; }
-        set { id = value; }
-    }
+        private string id;
+        private float intensidad;
 
-    public float Intensidad
-    {
-        get { return intensidad; }
-        private set { intensidad = value; }
-    }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public void CambiarIntensidad(float intensidad)
-    {
-        Intensidad = intensidad;
-        Console.WriteLine($"Intensidad de la luz {Id} cambiada a: {Intensidad}");
+        public float Intensidad
+        {
+            get { return intensidad; }
+            private set { intensidad = value; }
+        }
+
+        public void CambiarIntensidad(float intensidad)
+        {
+            Intensidad = intensidad;
+            Console.WriteLine($"Intensidad de la luz {Id} cambiada a: {Intensidad}");
+        }
     }
 }
-

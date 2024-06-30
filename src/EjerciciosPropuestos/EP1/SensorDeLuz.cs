@@ -1,26 +1,26 @@
-﻿namespace EP1;
-
-public class SensorDeLuz : Sensor
+﻿namespace EP1
 {
-    private float intensidadLuz;
-
-    public float IntensidadLuz
+    public class SensorDeLuz : Sensor
     {
-        get { return intensidadLuz; }
-        private set { intensidadLuz = value; }
-    }
+        private float intensidadLuz;
 
-    public override void LeerValor()
-    {
-        MedirIntensidad();
-    }
+        public float IntensidadLuz
+        {
+            get { return intensidadLuz; }
+            private set { intensidadLuz = value; }
+        }
 
-    private void MedirIntensidad()
-    {
-        // Implementación de la medición de la intensidad de luz
-        // Aquí puedes simular la medición de intensidad
-        IntensidadLuz = (float)new Random().NextDouble() * 100; // Simulación de la intensidad de luz
-        Console.WriteLine($"Intensidad de luz medida: {IntensidadLuz}");
+        public override void LeerValor()
+        {
+            MedirIntensidad();
+        }
+
+        private void MedirIntensidad()
+        {
+            // Implementación de la medición de la intensidad de luz
+            // Aquí puedes simular la medición de intensidad
+            IntensidadLuz = (float)new Random().NextDouble() * 100; // Simulación de la intensidad de luz
+            Console.WriteLine($"Intensidad de luz medida: {IntensidadLuz}");
+        }
     }
 }
-
