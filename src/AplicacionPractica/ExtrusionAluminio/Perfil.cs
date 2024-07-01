@@ -4,10 +4,10 @@
     class Perfil
     {
         public string Nombre { get; }
-        public int TiempoProcesoTotal { get; set; } // Tiempo total de proceso en segundos
+        public int TiempoProcesoTotal { get; set; } // En segundos
         public string FormaMatriz { get; }
         public string Aleacion { get; }
-        public int PuntosCalidad { get; set; } // Puntuación de calidad del perfil
+        public int PuntosCalidad { get; set; } // Sobre 100
         public int TemperaturaHorno { get; }
         public string RitmoExtrusionPrensa { get; }
         public string FuerzaPrensa { get; }
@@ -30,98 +30,67 @@
         {
             PuntosCalidad = 0; // Reiniciar puntuación
 
-            int ritmo = 0;
-            switch (RitmoExtrusionPrensa)
-            {
-                case "Lento":
-                ritmo = 1;
-                break;
-                case "Medio":
-                ritmo = 2;
-                break;
-                case "Rápido":
-                ritmo = 3;
-                break;
-            }
-
-            int fuerza = 0;
-            switch (FuerzaPrensa)
-            {
-                case "Baja":
-                fuerza = 1;
-                break;
-                case "Media":
-                fuerza = 2;
-                break;
-                case "Alta":
-                fuerza = 3;
-                break;
-            }
-
-            // Evaluar según la aleación y los parámetros de proceso recibidos
+            // Evaluar según la aleación y parámetros de proceso recibidos
             switch (Aleacion)
             {
                 case "6061":
                     if (TemperaturaHorno >= 450 && TemperaturaHorno <= 500)
                         PuntosCalidad += 25; // Añadir puntos por temperatura óptima
 
-                    if (fuerza >= 3) // Alta
+                    if (FuerzaPrensa == "Alta")
                         PuntosCalidad += 15;
-                    else if (fuerza == 2) // Media a Alta
+                    else if (FuerzaPrensa == "Media")
                         PuntosCalidad += 25;
-                    else if (fuerza <= 1) // Baja
+                    else if (FuerzaPrensa == "Baja")
                         PuntosCalidad += 0;
 
-                    if (ritmo == 2) // Medio
+                    if (RitmoExtrusionPrensa == "Medio")
                         PuntosCalidad += 25;
-                    else if (ritmo < 2) // Lento
+                    else if (RitmoExtrusionPrensa == "Lento")
                         PuntosCalidad -= 10;    
 
                     if (TiempoEnfriamiento >= 300)
                         PuntosCalidad += 25; // Añadir puntos por tiempo de enfriamiento correcto
-
                     break;
 
                 case "7075":
                     if (TemperaturaHorno >= 420 && TemperaturaHorno <= 470)
                         PuntosCalidad += 25;
 
-                    if (fuerza >= 3) // Alta
+                    if (FuerzaPrensa == "Alta")
                         PuntosCalidad += 25;
-                    else if (fuerza == 1) // Baja
+                    else if (FuerzaPrensa == "Baja")
                         PuntosCalidad -= 10;    
 
-                    if (ritmo == 2) // Medio
+                    if (RitmoExtrusionPrensa == "Medio") // Medio
                         PuntosCalidad += 15;
-                    else if (fuerza == 3) // Rápido
+                    else if (RitmoExtrusionPrensa == "Rápido") // Rápido
                         PuntosCalidad -= 10; 
-                    else if (fuerza == 1) // Lento
+                    else if (RitmoExtrusionPrensa == "Lento") // Lento
                         PuntosCalidad += 25;  
 
                     if (TiempoEnfriamiento >= 240)
                         PuntosCalidad += 25;
-
                     break;
 
                 case "2024":
                     if (TemperaturaHorno >= 400 && TemperaturaHorno <= 450)
                         PuntosCalidad += 25;
 
-                    if (fuerza == 2) // Media
+                    if (FuerzaPrensa == "Media") // Media
                         PuntosCalidad += 25;
-                    if (fuerza == 3) // Alta
+                    if (FuerzaPrensa == "Alta") // Alta
                     PuntosCalidad -= 10;
 
-                    if (ritmo == 2) // Medio
+                    if (RitmoExtrusionPrensa == "Medio") // Medio
                         PuntosCalidad += 25;
-                    if (ritmo == 3) // Rápido
+                    if (RitmoExtrusionPrensa == "Rápido") // Rápido
                         PuntosCalidad += 15;
-                    if (ritmo == 1) // Lento
+                    if (RitmoExtrusionPrensa == "Lento") // Lento
                         PuntosCalidad -= 10;
 
                     if (TiempoEnfriamiento >= 180)
                         PuntosCalidad += 25;
-
                     break;
 
                 default:
@@ -135,6 +104,5 @@
             else if (PuntosCalidad > 100)
                 PuntosCalidad = 100;
         }
-
     }
 }

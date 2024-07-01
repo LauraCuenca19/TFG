@@ -1,15 +1,15 @@
 ﻿namespace ExtrusionAluminio
 {
-    // Clase principal del programa
-    class ExtrusionAluminioAPS
+    // Clase para gestionar la lógica de Simulación
+    class ExtrusionAluminioSimulador
     {
-        private List<Maquina> ColaMaquinas { get; }
+        private List<Maquina> MaquinasProceso { get; }
         private List<Perfil> PerfilesCreados { get; }
 
-        public ExtrusionAluminioAPS()
+        public ExtrusionAluminioSimulador()
         {
             // Inicializar la cola de máquinas en el orden de operación
-            ColaMaquinas = new List<Maquina>
+            MaquinasProceso = new List<Maquina>
             {
                 new Horno(),
                 new Prensa(),
@@ -154,8 +154,26 @@
             }
         }
 
+        // Método para mostrar la lista de perfiles creados
+        public void MostrarListaPerfiles()
+        {
+            Console.WriteLine("\nLista de perfiles creados:");
+
+            if (PerfilesCreados.Count > 0)
+            {
+                foreach (var perfil in PerfilesCreados)
+                {
+                    Console.WriteLine($"- {perfil.Nombre}: {perfil.Aleacion}, {perfil.FormaMatriz}, Tiempo: {perfil.TiempoProcesoTotal} segundos, Calidad: {perfil.PuntosCalidad}/100");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay perfiles almacenados en esta simulación.");
+            }
+        }
+
         // Método para simular una prueba de creación de perfil
-        private void SimularPruebaCreacionPerfil()
+        public void SimularPruebaCreacionPerfil()
         {
             // Solicitar al usuario que ingrese el nombre del perfil
             string nombrePerfil = SolicitarNombrePerfil();
@@ -181,7 +199,7 @@
             Perfil perfil = new Perfil(nombrePerfil, SeleccionarFormaMatriz(), aleacionSeleccionada, temperaturaHorno, ritmoExtrusionPrensa, fuerzaPrensa, tiempoEnfriamiento);
 
             // Procesar el tocho en cada máquina en la cola
-            foreach (var maquina in ColaMaquinas)
+            foreach (var maquina in MaquinasProceso)
             {
                 maquina.RealizarOperacion(tocho, perfil);
             }
@@ -197,72 +215,6 @@
 
             // Almacenar perfil creado en la lista de perfiles
             PerfilesCreados.Add(perfil);
-        }
-
-        // Método para mostrar la lista de perfiles creados
-        private void MostrarListaPerfiles()
-        {
-            Console.WriteLine("\nLista de perfiles creados:");
-
-            if (PerfilesCreados.Count > 0)
-            {
-                foreach (var perfil in PerfilesCreados)
-                {
-                    Console.WriteLine($"- {perfil.Nombre}: {perfil.Aleacion}, {perfil.FormaMatriz}, Tiempo: {perfil.TiempoProcesoTotal} segundos, Calidad: {perfil.PuntosCalidad}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No hay perfiles almacenados en esta simulación.");
-            }
-        }
-
-        // Método principal para iniciar la simulación
-        public void IniciarSimulacion()
-        {
-            while (true)
-            {
-                SimularPruebaCreacionPerfil(); // Simular una prueba de creación de perfil
-
-                // Opciones al finalizar la prueba
-                while (true)
-                {
-                    System.Threading.Thread.Sleep(2000);
-                    Console.WriteLine("\nOpciones:");
-                    Console.WriteLine("1. Mostrar lista de perfiles creados");
-                    Console.WriteLine("2. Continuar con otra prueba");
-                    Console.WriteLine("3. Salir del programa");
-                    Console.Write("Seleccione una opción (1/2/3): ");
-                    string opcion = Console.ReadLine();
-
-                    switch (opcion)
-                    {
-                        case "1":
-                            // Mostrar lista de perfiles creados
-                            MostrarListaPerfiles();
-                            break;
-                        case "2":
-                            // Continuar con otra prueba
-                            Console.WriteLine("\nPreparando para iniciar otra prueba...");
-                            Console.WriteLine("-------------------------------------");
-                            break; // Salir del switch y continuar con la simulación
-                        case "3":
-                            // Salir del programa
-                            Console.WriteLine("\nSimulación finalizada.");
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            Console.WriteLine("\nOpción no válida. Intente nuevamente.");
-                            break;
-                    }
-
-                    // Si se selecciona continuar con otra prueba, salir del bucle interno
-                    if (opcion == "2")
-                    {
-                        break;
-                    }
-                }
-            }
         }
     }
 }
