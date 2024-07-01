@@ -1,0 +1,272 @@
+using System;
+using System.Collections.Generic;
+
+namespace APS_ExtrusionAluminio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creación de un sistema de planificación de producción
+            SistemaAPS sistema = new SistemaAPS();
+
+            // Crear y agregar máquinas al sistema
+            sistema.AgregarMaquina(new Horno("Horno de Calentamiento"));
+            sistema.AgregarMaquina(new Prensa("Prensa de Extrusión"));
+            sistema.AgregarMaquina(new Enfriador("Enfriador de Perfiles"));
+
+            // Crear perfiles
+            Perfil perfilA = new Perfil("Perfil A", 100, 4);
+            Perfil perfilB = new Perfil("Perfil B", 50, 3);
+            Perfil perfilC = new Perfil("Perfil C", 200, 5);
+            Perfil perfilD = new Perfil("Perfil D", 150, 6);
+
+            // Añadir perfiles al sistema
+            sistema.AgregarPerfil(perfilA);
+            sistema.AgregarPerfil(perfilB);
+            sistema.AgregarPerfil(perfilC);
+            sistema.AgregarPerfil(perfilD);
+
+            // Simular producción de perfiles
+            sistema.PlanificarProduccion();
+
+            Console.ReadLine();
+        }
+    }
+
+    // Clase abstracta para representar una máquina
+    abstract class Maquina
+    {
+        public string Nombre { get; protected set; }
+
+        public Maquina(string nombre)
+        {
+            Nombre = nombre;
+        }
+
+        public abstract void RealizarOperacion(Tocho tocho, string formaPerfil);
+    }
+
+    // Clase concreta para representar una máquina de horno
+    class Horno : Maquina
+    {
+        public int Temperatura { get; private set; }
+
+        public Horno(string nombre) : base(nombre)
+        {
+        }
+
+        public override void RealizarOperacion(Tocho tocho, string formaPerfil)
+        {
+            Console.WriteLine($"Tocho calentado en {Nombre} a {Temperatura}°C");
+            tocho.Temperatura = Temperatura;
+        }
+
+        public void ConfigurarTemperatura()
+        {
+            Console.Write($"Introduce la temperatura para el horno {Nombre}: ");
+            Temperatura = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+
+    // Clase concreta para representar una máquina de prensa
+    class Prensa : Maquina
+    {
+        public string NivelFuerza { get; private set; }
+        public string RitmoExtrusion { get; private set; }
+
+        public Prensa(string nombre) : base(nombre)
+        {
+        }
+
+        public override void RealizarOperacion(Tocho tocho, string formaPerfil)
+        {
+            Console.WriteLine($"Tocho extruido en {Nombre} con nivel de fuerza: {NivelFuerza}, ritmo de extrusión: {RitmoExtrusion}");
+        }
+
+        public void ConfigurarProceso()
+        {
+            Console.Write($"Introduce el nivel de fuerza para la prensa {Nombre}: ");
+            NivelFuerza = Console.ReadLine();
+
+            Console.Write($"Introduce el ritmo de extrusión para la prensa {Nombre}: ");
+            RitmoExtrusion = Console.ReadLine();
+        }
+    }
+
+    // Clase concreta para representar una máquina de enfriador
+    class Enfriador : Maquina
+    {
+        public int TiempoEnfriamiento { get; private set; }
+
+        public Enfriador(string nombre) : base(nombre)
+        {
+        }
+
+        public override void RealizarOperacion(Tocho tocho, string formaPerfil)
+        {
+            Console.WriteLine($"Perfil enfriado en {Nombre} durante {TiempoEnfriamiento} segundos");
+        }
+
+        public void ConfigurarTiempoEnfriamiento()
+        {
+            Console.Write($"Introduce el tiempo de enfriamiento para el enfriador {Nombre} (segundos): ");
+            TiempoEnfriamiento = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+
+    // Clase para representar un perfil como objeto
+    class Perfil
+    {
+        public string Nombre { get; }
+        public int TamanoLote { get; }
+        public int TiempoProceso { get; }
+
+        public Perfil(string nombre, int tamanoLote, int tiempoProceso)
+        {
+            Nombre = nombre;
+            TamanoLote = tamanoLote;
+            TiempoProceso = tiempoProceso;
+        }
+
+        public bool EvaluarCalidad(string aleacion, int temperatura, string nivelFuerza, string ritmoExtrusion)
+        {
+            // Implementación básica de evaluación de calidad
+            if (aleacion == "6061" && temperatura >= 450 && temperatura <= 500 && nivelFuerza == "Medio a Alto" && ritmoExtrusion == "Medio")
+            {
+                return true;
+            }
+            else if (aleacion == "7075" && temperatura >= 420 && temperatura <= 470 && nivelFuerza == "Alto" && (ritmoExtrusion == "Lento" || ritmoExtrusion == "Medio"))
+            {
+                return true;
+            }
+            else if (aleacion == "2024" && temperatura >= 400 && temperatura <= 450 && nivelFuerza == "Medio" && (ritmoExtrusion == "Medio" || ritmoExtrusion == "Rápido"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    // Clase para representar un tocho como objeto
+    class Tocho
+    {
+        public double Longitud { get; private set; }
+        public string Aleacion { get; private set; }
+        public int Temperatura { get; set; }
+
+        public Tocho()
+        {
+            Random rand = new Random();
+            Longitud = Math.Round(1.5 + rand.NextDouble() * 1.5, 2);
+            string[] aleaciones = { "6061", "7075", "2024" };
+            Aleacion = aleaciones[rand.Next(aleaciones.Length)];
+            Temperatura = 25; // Temperatura ambiente
+        }
+    }
+
+    // Clase para representar un sistema de planificación de producción
+    class SistemaAPS
+    {
+        private List<Maquina> maquinas;
+        private List<Perfil> perfiles;
+
+        public SistemaAPS()
+        {
+            maquinas = new List<Maquina>();
+            perfiles = new List<Perfil>();
+        }
+
+        public void AgregarMaquina(Maquina maquina)
+        {
+            maquinas.Add(maquina);
+        }
+
+        public void AgregarPerfil(Perfil perfil)
+        {
+            perfiles.Add(perfil);
+        }
+
+        public void PlanificarProduccion()
+        {
+            Random rand = new Random();
+
+            foreach (var perfil in perfiles)
+            {
+                // Crear un tocho aleatorio
+                Tocho tocho = new Tocho();
+
+                // Mostrar información del tocho
+                Console.WriteLine($"Tocho creado - Longitud: {tocho.Longitud} m, Aleación: {tocho.Aleacion}");
+
+                // Consultar la guía manual para la aleación
+                ConsultarGuiaManual(tocho.Aleacion);
+
+                // Configurar temperatura del horno
+                Horno horno = (Horno)maquinas.Find(m => m is Horno);
+                horno.ConfigurarTemperatura();
+
+                // Configurar proceso de la prensa
+                Prensa prensa = (Prensa)maquinas.Find(m => m is Prensa);
+                prensa.ConfigurarProceso();
+
+                // Realizar operación de calentamiento en el horno
+                horno.RealizarOperacion(tocho, null); // El segundo parámetro es para la forma del perfil (no utilizado en el horno)
+
+                // Realizar operación de extrusión en la prensa
+                prensa.RealizarOperacion(tocho, null); // El segundo parámetro es para la forma del perfil (no utilizado en la prensa)
+
+                // Configurar tiempo de enfriamiento
+                Enfriador enfriador = (Enfriador)maquinas.Find(m => m is Enfriador);
+                enfriador.ConfigurarTiempoEnfriamiento();
+
+                // Realizar operación de enfriamiento en el enfriador
+                enfriador.RealizarOperacion(tocho, null); // El segundo parámetro es para la forma del perfil (no utilizado en el enfriador)
+
+                // Evaluar calidad del perfil generado
+                bool calidad = perfil.EvaluarCalidad(tocho.Aleacion, horno.Temperatura, prensa.NivelFuerza, prensa.RitmoExtrusion);
+
+                if (calidad)
+                {
+                    Console.WriteLine($"El perfil {perfil.Nombre} cumple con los estándares de calidad.");
+                }
+                else
+                {
+                    Console.WriteLine($"El perfil {perfil.Nombre} no cumple con los estándares de calidad.");
+                }
+
+                // Simular tiempo de espera entre perfiles
+                System.Threading.Thread.Sleep(rand.Next(1000, 3000));
+            }
+        }
+
+        private void ConsultarGuiaManual(string aleacion)
+        {
+            // Proporcionar recomendaciones basadas en la aleación seleccionada
+            if (aleacion == "6061")
+            {
+                Console.WriteLine("Recomendaciones para aleación 6061:");
+                Console.WriteLine("Temperatura óptima: 450-500°C");
+                Console.WriteLine("Nivel de fuerza: Medio a Alto");
+                Console.WriteLine("Ritmo de extrusión: Medio");
+            }
+            else if (aleacion == "7075")
+            {
+                Console.WriteLine("Recomendaciones para aleación 7075:");
+                Console.WriteLine("Temperatura óptima: 420-470°C");
+                Console.WriteLine("Nivel de fuerza: Alto");
+                Console.WriteLine("Ritmo de extrusión: Lento a Medio");
+            }
+            else if (aleacion == "2024")
+            {
+                Console.WriteLine("Recomendaciones para aleación 2024:");
+                Console.WriteLine("Temperatura óptima: 400-450°C");
+                Console.WriteLine("Nivel de fuerza: Medio");
+                Console.WriteLine("Ritmo de extrusión: Medio a Rápido");
+            }
+        }
+    }
+}
