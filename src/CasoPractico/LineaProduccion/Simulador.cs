@@ -5,16 +5,16 @@ namespace LineaProduccion
 {
     public class Simulador
     {
-        int manuales = 0;
-        int automaticas = 0;
+        private int contadorEstacionesManuales = 0;
+        private int contadorEstacionesAutomaticas = 0;
         public List<Estacion> listaEstaciones { get; set; }
-        public List<Resultado> resultados { get; set; }
+        public List<Resultado> listaResultados { get; set; }
         public Cinta Cinta { get; set; }
 
         public Simulador()
         {
             listaEstaciones = new List<Estacion>();
-            resultados = new List<Resultado>();
+            listaResultados = new List<Resultado>();
         }
 
         public void ConfigurarLinea()
@@ -39,7 +39,7 @@ namespace LineaProduccion
                     int tiempoMantenimiento = int.Parse(Console.ReadLine());
                     listaEstaciones.Add(new EstacionManual(tiempoMin, tiempoMax, tiempoMantenimiento));
                     Console.WriteLine("Estación manual añadida a la línea.\n");
-                    manuales++;
+                    contadorEstacionesManuales++;
                     System.Threading.Thread.Sleep(1000);
                 }
                 else if (tipoEstacion == "A")
@@ -50,7 +50,7 @@ namespace LineaProduccion
                     int tiempoMantenimiento = int.Parse(Console.ReadLine());
                     listaEstaciones.Add(new EstacionAutomatica(tiempoOperacion, tiempoMantenimiento));
                     Console.WriteLine("Estación automática añadida a la línea.\n");
-                    automaticas++;
+                    contadorEstacionesAutomaticas++;
                     System.Threading.Thread.Sleep(1000);
                 }
             }
@@ -91,7 +91,7 @@ namespace LineaProduccion
                 estacion.RealizarOperacion();
             }
 
-            resultados.Add(new Resultado(nombre,"Ideal", manuales, automaticas, tiempoTotal));
+            listaResultados.Add(new Resultado(nombre,"Ideal", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -117,7 +117,7 @@ namespace LineaProduccion
                 estacion.RealizarOperacion();
             }
 
-            resultados.Add(new Resultado(nombre,"Estandar", manuales, automaticas, tiempoTotal));
+            listaResultados.Add(new Resultado(nombre,"Estandar", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -142,7 +142,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 estacion.RealizarOperacion();
             }
-            resultados.Add(new Resultado(nombre,"Critico", manuales, automaticas, tiempoTotal));
+            listaResultados.Add(new Resultado(nombre,"Critico", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -175,7 +175,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 estacion.RealizarOperacion();
             }
-            resultados.Add(new Resultado(nombre,$"Fallo en estación {indiceFallo+1}", manuales, automaticas, tiempoTotal));
+            listaResultados.Add(new Resultado(nombre,$"Fallo en estación {indiceFallo+1}", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -204,7 +204,7 @@ namespace LineaProduccion
                 estacion.RealizarOperacion();
             }
 
-            resultados.Add(new Resultado(nombre,$"Velocidad determinada {velocidad} m/s", manuales, automaticas, tiempoTotal));
+            listaResultados.Add(new Resultado(nombre,$"Velocidad determinada {velocidad} m/s", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
         
@@ -214,9 +214,9 @@ namespace LineaProduccion
         {
             Console.WriteLine("\nLista de resultados:");
 
-            if (resultados.Count > 0)
+            if (listaResultados.Count > 0)
             {
-                foreach (var resultado in resultados)
+                foreach (var resultado in listaResultados)
                 {
                     Console.WriteLine($"- {resultado.NombreSimulacion} ({resultado.TipoSimulacion}): Número de estaciones automáticas: {resultado.NumeroEstacionesAutomaticas}, Numero de estaciones manuales: {resultado.NumeroEstacionesManuales}, Tiempo total de producción: {resultado.TiempoTotalProduccion}s.");
                 }
