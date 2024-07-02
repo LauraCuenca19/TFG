@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EP4
 build_property.ProjectDir = C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP4\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

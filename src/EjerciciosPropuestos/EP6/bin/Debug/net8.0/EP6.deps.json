@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "EP6/1.0.0": {
+        "dependencies": {
+          "EP5": "1.0.0"
+        },
+        "runtime": {
+          "EP6.dll": {}
+        }
+      },
+      "EP5/1.0.0": {
+        "runtime": {
+          "EP5.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EP6/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EP5/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

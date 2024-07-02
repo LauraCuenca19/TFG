@@ -1,0 +1,15 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\bin\Debug\net8.0\EP1.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\bin\Debug\net8.0\EP1.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\bin\Debug\net8.0\EP1.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\bin\Debug\net8.0\EP1.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\bin\Debug\net8.0\EP1.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.sourcelink.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\refint\EP1.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\EP1.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\EjerciciosPropuestos\EP1\obj\Debug\net8.0\ref\EP1.dll

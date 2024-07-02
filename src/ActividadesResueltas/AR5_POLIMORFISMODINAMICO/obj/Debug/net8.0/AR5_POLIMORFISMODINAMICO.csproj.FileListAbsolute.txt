@@ -1,0 +1,15 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\bin\Debug\net8.0\AR5_POLIMORFISMODINAMICO.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\bin\Debug\net8.0\AR5_POLIMORFISMODINAMICO.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\bin\Debug\net8.0\AR5_POLIMORFISMODINAMICO.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\bin\Debug\net8.0\AR5_POLIMORFISMODINAMICO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\bin\Debug\net8.0\AR5_POLIMORFISMODINAMICO.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.sourcelink.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\refint\AR5_POLIMORFISMODINAMICO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\AR5_POLIMORFISMODINAMICO.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMODINAMICO\obj\Debug\net8.0\ref\AR5_POLIMORFISMODINAMICO.dll

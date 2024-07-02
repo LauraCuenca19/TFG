@@ -1,0 +1,15 @@
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\bin\Debug\net8.0\C6_INTERFACES.exe
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\bin\Debug\net8.0\C6_INTERFACES.deps.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\bin\Debug\net8.0\C6_INTERFACES.runtimeconfig.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\bin\Debug\net8.0\C6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\bin\Debug\net8.0\C6_INTERFACES.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.GeneratedMSBuildEditorConfig.editorconfig
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.AssemblyInfoInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.AssemblyInfo.cs
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.csproj.CoreCompileInputs.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.sourcelink.json
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\refint\C6_INTERFACES.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.pdb
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\C6_INTERFACES.genruntimeconfig.cache
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\Ejemplos\C6_INTERFACES\obj\Debug\net8.0\ref\C6_INTERFACES.dll

@@ -26,3 +26,4 @@ C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIM
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMOESTATICO\obj\Debug\net7.0\AR5_POLIMORFISMOESTATICO.pdb
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMOESTATICO\obj\Debug\net7.0\AR5_POLIMORFISMOESTATICO.genruntimeconfig.cache
 C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMOESTATICO\obj\Debug\net7.0\ref\AR5_POLIMORFISMOESTATICO.dll
+C:\Yo\Universidad\GRADO\TFG_23_24\repoTFG\TFG\src\ActividadesResueltas\AR5_POLIMORFISMOESTATICO\obj\Debug\net7.0\AR5_POLIMORFISMOESTATICO.sourcelink.json
