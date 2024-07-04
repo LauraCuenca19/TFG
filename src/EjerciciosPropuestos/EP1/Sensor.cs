@@ -1,9 +1,15 @@
-﻿namespace EP1
+﻿namespace Sensores
 {
     public abstract class Sensor
     {
         private string id;
         private string ubicacion;
+
+        public Sensor(string id, string ubicacion)
+        {
+            this.id = id;
+            this.ubicacion = ubicacion;       
+        }
 
         public string Id
         {

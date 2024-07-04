@@ -1,4 +1,4 @@
-﻿namespace EP1
+﻿namespace Sensores
 {
     public class SensorDeMovimiento : Sensor
     {
@@ -8,6 +8,11 @@
         {
             get { return estado; }
             private set { estado = value; }
+        }
+
+        public SensorDeMovimiento (string id, string ubicacion) : base(id, ubicacion)
+        {
+            estado = false;
         }
 
         public override void LeerValor()
@@ -23,9 +28,9 @@
             if (random == 1)
             {
                 Estado = true;
-                Console.WriteLine($"Movimiento detectado: {Estado}");
+                Console.WriteLine($"Movimiento detectado: {Estado} en {Ubicacion}.");
             }
-            else Console.WriteLine($"Movimiento detectado: {Estado}");
+            else Console.WriteLine($"Movimiento detectado: {Estado} en {Ubicacion}.");
         }
     }
 }
