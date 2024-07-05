@@ -18,7 +18,7 @@ namespace EP6
 
             for (int i = 0; i < cantidadPCSobremesa; i++)
             {
-                // Se esperan 1 placa base, 1 carcasa, 1 fuente de alimentación y 2 módulos de RAM para producir un PC de sobremesa
+                // Se esperan 1 placa base, 1 carcasa, 1 fuente de alimentación, 2 módulos de RAM y 2 discos duros para producir un PC de sobremesa
                 if (placaBase.Consumir(1) && caja.Consumir(1) && fuenteAlimentacion.Consumir(1) && moduloRAM.Consumir(2) && discoDuro.Consumir(2))
                 {
                     Cantidad++;
