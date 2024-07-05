@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExtrusionAluminio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+463a544ab3f2fdb03c71246659d5e9d11c1594c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60da4fa71428e9ae2b93ee241c162119d24c92b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExtrusionAluminio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExtrusionAluminio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
