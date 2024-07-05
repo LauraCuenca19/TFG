@@ -2,7 +2,7 @@
 {
     public class Inventario
     {
-        private List<ItemInventario> items;
+        public List<ItemInventario> items;
 
         public Inventario()
         {
@@ -12,7 +12,7 @@
         public void AgregarItem(ItemInventario item)
         {
             items.Add(item);
-            Console.WriteLine($"Ítem {item.Id} ({item.Descripcion}) agregado al inventario.");
+            Console.WriteLine($"Ítem {item.Id} ({item.Nombre}) agregado al inventario.");
         }
 
         public void EliminarItem(string id)
@@ -21,7 +21,7 @@
             if (item != null)
             {
                 items.Remove(item);
-                Console.WriteLine($"Ítem {item.Id} ({item.Descripcion}  eliminado del inventario.");
+                Console.WriteLine($"Ítem {item.Id} ({item.Nombre}  eliminado del inventario.");
             }
             else
             {
@@ -37,7 +37,7 @@
             }
         }
 
-        private ItemInventario BuscarItemPorId(string id)
+        public ItemInventario BuscarItemPorId(string id)
         {
             foreach (var item in items)
             {

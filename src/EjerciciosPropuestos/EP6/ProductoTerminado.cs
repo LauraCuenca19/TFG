@@ -6,7 +6,7 @@ namespace EP6
     public abstract class ProductoTerminado : ItemInventario
     {
         public string Id { get; set; }
-        public string Descripcion 
+        public string Nombre 
         { 
             get { return this.GetType().Name; }
             set { value = this.GetType().Name; } 
@@ -21,14 +21,7 @@ namespace EP6
             PrecioUnitario = precioUnitario;
         }
 
-        public virtual void Produccion(int cantidadProductos, Parte parte1, Parte parte2, Parte parte3)
-        {
-
-        }
-        public virtual void Produccion(int cantidadProductos, Parte parte1, Parte parte2)
-        {
-
-        }
+        public abstract void Produccion(int cantidadProductos, List<ItemInventario> itemsInventario);
 
         public void Vender(int cantidad)
         {
@@ -55,7 +48,7 @@ namespace EP6
 
         public override string ToString()
         {
-            return $"{Id} ({Descripcion}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
+            return $"{Id} ({Nombre}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
         }
     }
 }

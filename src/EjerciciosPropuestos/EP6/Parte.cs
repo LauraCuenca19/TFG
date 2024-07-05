@@ -6,14 +6,14 @@ namespace EP6
     public class Parte : ItemInventario
     {
         public string Id { get; set; }
-        public string Descripcion { get; set; }
+        public string Nombre { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
 
         public Parte(string id, string descripcion, int cantidad, decimal precioUnitario)
         {
             Id = id;
-            Descripcion = descripcion;
+            Nombre = descripcion;
             Cantidad = cantidad;
             PrecioUnitario = precioUnitario;
         }
@@ -40,7 +40,7 @@ namespace EP6
 
         public override string ToString()
         {
-            return $"{Id} ({Descripcion}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
+            return $"{Id} ({Nombre}): {Cantidad} unidades, Precio unitario: {PrecioUnitario}";
         }
     }
 }

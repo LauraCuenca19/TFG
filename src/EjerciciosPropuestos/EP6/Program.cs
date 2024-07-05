@@ -6,23 +6,30 @@ class Program
     static void Main()
     {
         // Crear instancias de Partes
-        Parte pata = new Parte("P1", "Pata", 20, 5.0m);
-        Parte baseSilla = new Parte("P2", "Base de Silla", 10, 10.0m);
-        Parte respaldo = new Parte("P3", "Respaldo", 10, 8.0m);
-        Parte baseTaburete = new Parte("P4", "Base de Taburete", 15, 12.0m);
+        Parte placaBase = new Parte("PB01", "Placa Base", 10, 100.00m);
+        Parte carcasa = new Parte("CA01", "Carcasa", 10, 45.00m);
+        Parte caja = new Parte("CA02", "Caja", 10, 50.00m);
+        Parte fuenteAlimentacion = new Parte("FA01", "Fuente de Alimentación", 10, 70.00m);
+        Parte bateria = new Parte("BA01", "Batería", 10, 40.00m);
+        Parte moduloRAM = new Parte("MR01", "Módulo RAM", 20, 30.00m);
+        Parte discoDuro = new Parte("DD01", "Disco Duro", 20, 35.00m);
 
         // Crear instancias de Productos Terminados
-        Silla silla = new Silla("PT1", 0, 50.0m);
-        Taburete taburete = new Taburete("PT2", 0, 30.0m);
+        PCSobremesa pcSobremesa = new PCSobremesa("PC-S01", 0, 900.00m);
+        PCPortatil pcPortatil = new PCPortatil("PC-P01", 0, 700.00m);
 
+        // Agregar items a inventario
         Inventario inventario = new Inventario();
 
-        inventario.AgregarItem(pata);
-        inventario.AgregarItem(baseSilla);
-        inventario.AgregarItem(respaldo);
-        inventario.AgregarItem(baseTaburete);
-        inventario.AgregarItem(silla);
-        inventario.AgregarItem(taburete);
+        inventario.AgregarItem(placaBase);
+        inventario.AgregarItem(carcasa);
+        inventario.AgregarItem(caja);
+        inventario.AgregarItem(fuenteAlimentacion);
+        inventario.AgregarItem(bateria);
+        inventario.AgregarItem(moduloRAM);
+        inventario.AgregarItem(discoDuro);
+        inventario.AgregarItem(pcSobremesa);
+        inventario.AgregarItem(pcPortatil);
 
         // Mostrar inventario actual de partes y productos terminados
         Console.WriteLine("\n--- Inventario actual ---");
@@ -31,10 +38,14 @@ class Program
         // Ejemplo de producción de productos terminados
         Console.WriteLine("\n--- Producción de productos terminados ---");
         
-        var (numSillas, numTaburetes) = Orden("producir");
+        // Pedir cantidad a producir
+        Console.Write("¿Cuántos PCs de Sobremesa quieres producir? ");
+        int cantidadPCSobremesa = int.Parse(Console.ReadLine());
+        Console.Write("¿Cuántos PCs Portátiles quieres producir? ");
+        int cantidadPCPortatil = int.Parse(Console.ReadLine());
 
-        silla.Produccion(numSillas, pata, baseSilla, respaldo);
-        taburete.Produccion(numTaburetes, pata, baseTaburete);
+        pcSobremesa.Produccion(cantidadPCSobremesa, inventario.items);
+        pcPortatil.Produccion(cantidadPCPortatil, inventario.items);
 
         // Mostrar inventario actual de partes y productos terminados
         Console.WriteLine("\n--- Inventario actual ---");
@@ -43,10 +54,14 @@ class Program
         // Ejemplo de venta de productos terminados
         Console.WriteLine("\n--- Venta de productos terminados ---");
         
-        (numSillas, numTaburetes) = Orden("vender");
-
-        silla.Vender(numSillas);
-        taburete.Vender(numTaburetes);
+        // Pedir cantidad a vender
+        Console.Write("¿Cuántos PCs de Sobremesa quieres vender? ");
+        int venderPCSobremesa = int.Parse(Console.ReadLine());
+        pcSobremesa.Vender(venderPCSobremesa);
+        
+        Console.Write("¿Cuántos PCs Portátiles quieres vender? ");
+        int venderPCPortatil = int.Parse(Console.ReadLine());
+        pcPortatil.Vender(venderPCPortatil);
 
         // Mostrar inventario actual de partes y productos terminados
         Console.WriteLine("\n--- Inventario actual ---");
@@ -55,188 +70,17 @@ class Program
         // Ejemplo de reposición de partes
         Console.WriteLine("\n--- Reposición de partes ---");
 
-        var (numPatas, numRespaldo, numBaseSilla, numBaseTaburete) = Reponer();
-
-        pata.Reponer(numPatas);
-        respaldo.Reponer(numRespaldo);
-        baseSilla.Reponer(numBaseSilla);
-        baseTaburete.Reponer(numBaseTaburete);
-
+        foreach (var item in inventario.items)
+        {
+            if (item is Parte)
+            {
+                Console.WriteLine($"¿Cuántos {((Parte)item).Nombre} deseas reponer?");
+                int partesReponer = int.Parse(Console.ReadLine());;
+                ((Parte)item).Reponer(partesReponer);
+            }
+        }
         // Mostrar inventario actual de partes y productos terminados
         Console.WriteLine("\n--- Inventario actual ---");
         inventario.MostrarInventario();
     }
-
-    static (int,int) Orden(string orden)
-    {
-        int numSillas = 0;
-        int numTaburetes = 0;
-        bool confirmacion = false;
-        string entrada;
-        
-        switch (orden)
-        {
-            case "producir":
-            {
-                Console.WriteLine("¿Cuántos productos deseas producir?");
-        
-                while(!confirmacion)
-                {
-                    Console.WriteLine("Sillas: ");
-                    entrada = Console.ReadLine(); 
-                    if (int.TryParse(entrada, out numSillas))
-                    {
-                        confirmacion = true;
-                    }
-                    else
-                    {
-                        // Si la conversión falla, imprimir un mensaje de error
-                        Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                        confirmacion = false;
-                    }
-                }
-                confirmacion = false;
-
-                while(!confirmacion)
-                {
-                    Console.WriteLine("Taburetes: ");
-                    entrada = Console.ReadLine();
-                    if (int.TryParse(entrada, out numTaburetes))
-                    {
-                        confirmacion = true;
-                    }
-                    else
-                    {
-                        // Si la conversión falla, imprimir un mensaje de error
-                        Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                        confirmacion = false;
-                    }
-                }
-                confirmacion = false;
-                break;
-            }
-
-            case "vender":
-            {
-                Console.WriteLine("¿Cuántos productos deseas vender?");
-        
-                while(!confirmacion)
-                {
-                    Console.WriteLine("Sillas: ");
-                    entrada = Console.ReadLine(); 
-                    if (int.TryParse(entrada, out numSillas))
-                    {
-                        confirmacion = true;
-                    }
-                    else
-                    {
-                        // Si la conversión falla, imprimir un mensaje de error
-                        Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                        confirmacion = false;
-                    }
-                }
-                confirmacion = false;
-
-                while(!confirmacion)
-                {
-                    Console.WriteLine("Taburetes: ");
-                    entrada = Console.ReadLine();
-                    if (int.TryParse(entrada, out numTaburetes))
-                    {
-                        confirmacion = true;
-                    }
-                    else
-                    {
-                        // Si la conversión falla, imprimir un mensaje de error
-                        Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                        confirmacion = false;
-                    }
-                }
-                confirmacion = false;
-                break;
-            }
-        }
-        return (numSillas, numTaburetes);
-    }
-
-    static (int, int, int, int) Reponer()
-    {
-        int numPatas = 0;
-        int numRespaldo = 0;
-        int numBaseSilla = 0;
-        int numBaseTaburete = 0;
-        bool confirmacion = false;
-        string entrada;
-        Console.WriteLine("¿Cuántos productos deseas reponer?");
-        
-        while(!confirmacion)
-        {
-            Console.WriteLine("Patas: ");
-            entrada = Console.ReadLine(); 
-            if (int.TryParse(entrada, out numPatas))
-            {
-                confirmacion = true;
-            }
-            else
-            {
-                // Si la conversión falla, imprimir un mensaje de error
-                Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                confirmacion = false;
-            }
-        }
-        confirmacion = false;
-
-        while(!confirmacion)
-        {
-            Console.WriteLine("Respaldo: ");
-            entrada = Console.ReadLine();
-            if (int.TryParse(entrada, out numRespaldo))
-            {
-                confirmacion = true;
-            }
-            else
-            {
-                // Si la conversión falla, imprimir un mensaje de error
-                Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                confirmacion = false;
-            }
-        }
-        confirmacion = false;
-
-        while(!confirmacion)
-        {
-            Console.WriteLine("Base de Silla: ");
-            entrada = Console.ReadLine();
-            if (int.TryParse(entrada, out numBaseSilla))
-            {
-                confirmacion = true;
-            }
-            else
-            {
-                // Si la conversión falla, imprimir un mensaje de error
-                Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                confirmacion = false;
-            }
-        }
-        confirmacion = false;
-
-        while(!confirmacion)
-        {
-            Console.WriteLine("Base de Taburete: ");
-            entrada = Console.ReadLine();
-            if (int.TryParse(entrada, out numBaseTaburete))
-            {
-                confirmacion = true;
-            }
-            else
-            {
-                // Si la conversión falla, imprimir un mensaje de error
-                Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero.");
-                confirmacion = false;
-            }
-        }
-        confirmacion = false;
-
-        return (numPatas, numRespaldo, numBaseSilla, numBaseTaburete);
-    } 
 }
