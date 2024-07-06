@@ -4,6 +4,7 @@
     {
         static void Main()
         {
+            // Instanciar objeto de Dispositivo
             Dispositivo sensor1 = new Dispositivo("00000","ModeloA",DateTime.Today);
 
             // Acceso a atributo público desde fuera de la clase
@@ -15,7 +16,7 @@
             sensor1.DemostrarAccesoDesdeClase();
 
             // Los siguientes accesos no son posibles:
-            // sensor1.numeroDeSerie = "MarcaNueva";  // Error: 'numeroDeSerie' is inaccessible due to its protection level
+            // sensor1.numeroDeSerie = "11111";  // Error: 'numeroDeSerie' is inaccessible due to its protection level
             // sensor1.MostrarNumeroDeSerie();    // Error: 'MostrarNumeroDeSerie' is inaccessible due to its protection level
             // sensor1.MostrarModelo();    // Error: 'MostraModelo' is inaccessible due to its protection level
         }

@@ -1,21 +1,15 @@
-﻿using Materiales;
-
-namespace Actuadores
+﻿namespace Actuadores
 {
+    // Clase derivada de Actuador para representar una resistencia calefactora
     public class ResistenciaCalefactora : Actuador
     {
+        // Constructror
+        public ResistenciaCalefactora(string id) : base(id){}
 
-        public ResistenciaCalefactora(string id) : base(id)
-        {
-
-        }
-
+        // Método para simular la acción del actuador
         public override void RealizarAccion()
         {
-            if (Encendido)
-            {
-                Console.WriteLine($"Resistencia {Id} activa.");
-            }
+            if (Encendido) Console.WriteLine($"Resistencia {Id} calentando.");
         }
     }
 }

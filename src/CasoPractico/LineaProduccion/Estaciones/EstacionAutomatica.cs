@@ -1,3 +1,5 @@
+using ComponentesLineaProduccion;
+
 namespace Estaciones
 {
     public class EstacionAutomatica : Estacion

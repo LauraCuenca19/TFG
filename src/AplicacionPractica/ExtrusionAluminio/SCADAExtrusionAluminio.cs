@@ -3,31 +3,32 @@ using Actuadores;
 using Materiales;
 using Maquinaria;
 
-
-namespace ExtrusionAluminio
+namespace SCADA
 {
-    // Clase para gestionar la lógica de Simulación
+    // Clase para simular un SCADA de extrusión de aluminio
     public class SCADAExtrusionAluminio
     {
-        private List<Maquina> maquinasProceso { get; }
-        private List<Perfil> perfilesCreados { get; }
-        private List<Tocho> tochos { get; }
+        private List<Maquina> maquinasProceso { get; } // lista de máquinas
+        private List<Perfil> perfilesCreados { get; } // lista de perfiles creados
+        private List<Tocho> tochos { get; } // lista de tochos
+        private int contadorPerfiles; 
         
-
+        // Constructor
         public SCADAExtrusionAluminio()
         {
-            // Inicializar la cola de máquinas en el orden de operación
+            // Inicializar la lista de máquinas, añadiendo las máquinas en el orden de operación
             maquinasProceso = new List<Maquina>
             {
                 new Horno("H1", new SensorTemperatura("STH1"), new ResistenciaCalefactora("RCH1")),
                 new Prensa("P1", new SensorPresion("SPP1"), new SensorVelocidad("SVP1")),
                 new TunelEnfriamiento("TE1", new SensorTemperatura("STTE1"), new SensorTemperatura("STTE2"), new Ventilador("VTE1"))
             };
-
-            // Inicializar lista de perfiles creados
+            // Inicializar lista de perfiles creados y de tochos utilizados
             perfilesCreados = new List<Perfil>();
-
             tochos = new List<Tocho>();
+
+            // Inicializar contador de perfiles
+            contadorPerfiles = 0;
         }
 
         // Método para solicitar al usuario cantidad de tochos a procesar
@@ -37,7 +38,7 @@ namespace ExtrusionAluminio
             return int.Parse(Console.ReadLine());
         }
 
-        // Función para solicitar al usuario que ingrese la aleación para el perfil
+        // Método para solicitar al usuario que ingrese la aleación para el perfil
         private string SolicitarAleacion()
         {
             Console.Write("Ingrese la aleación del tocho (6061, 7075, 2024): ");
@@ -48,7 +49,7 @@ namespace ExtrusionAluminio
                 // Validar que la aleación ingresada sea una de las opciones permitidas
                 if (aleacion == "6061" || aleacion == "7075" || aleacion == "2024")
                 {
-                    return aleacion; // Devolver la aleación válida
+                    return aleacion; // Devolver la aleación
                 }
                 else
                 {
@@ -57,7 +58,7 @@ namespace ExtrusionAluminio
             }
         }
 
-        // Función para solicitar al usuario que elija la forma de la matriz
+        // Método para solicitar al usuario que elija la forma de la matriz
         private string SeleccionarFormaMatriz()
         {
             Console.WriteLine("\nSeleccione la forma de la matriz:");
@@ -82,7 +83,7 @@ namespace ExtrusionAluminio
             }
         }
 
-        // Método para consultar la guía con los requisitos óptimos para cada aleación
+        // Método para mostrar con los datos óptimos para cada aleación
         private double[] ConsultarGuiaManual(string aleacion)
         {
             // Proporcionar recomendaciones basadas en la aleación seleccionada
@@ -93,26 +94,22 @@ namespace ExtrusionAluminio
                     Console.WriteLine("Temperatura óptima: 450-500°C");
                     Console.WriteLine("Presión: Media a Alta");
                     Console.WriteLine("Ritmo de extrusión: Medio");
-                    return new double [] {450,500,6.5,8,4,7.5};
-                    break;
+                    return [450,500,6.5,8,4,7.5];
                 case "7075":
                     Console.WriteLine("\nRecomendaciones para aleación 7075:");
                     Console.WriteLine("Temperatura óptima: 420-470°C");
                     Console.WriteLine("Presión: Alta");
                     Console.WriteLine("Ritmo de extrusión: Lento a Medio");
-                    return new double [] {420,470,7.5,8,0.5,5};
-                    break;
+                    return [420,470,7.5,8,0.5,5];
                 case "2024":
                     Console.WriteLine("\nRecomendaciones para aleación 2024:");
                     Console.WriteLine("Temperatura óptima: 400-450°C");
                     Console.WriteLine("Presión: Media");
                     Console.WriteLine("Ritmo de extrusión: Medio a Rápido");
-                    return new double [] {400,450,5.5,7,5,10};
-                    break;
+                    return [400,450,5.5,7,5,10];
                 default:
                     Console.WriteLine("Aleación no reconocida.");
-                    return new double [] {0,0,0,0,0,0};
-                    break;
+                    return [0,0,0,0,0,0];
             }
         }
 
@@ -134,7 +131,7 @@ namespace ExtrusionAluminio
             }
         }
 
-        // Método para simular una prueba de creación de perfil
+        // Método para simular la producción de perfiles
         public void ProcesarPerfiles()
         {
             // Soliciar número de tochos a procesar
@@ -146,6 +143,7 @@ namespace ExtrusionAluminio
             // Mostrar la guía con las recomendaciones para la aleación seleccionada
             double[] datos  = ConsultarGuiaManual(aleacionSeleccionada);
 
+            // Asignar los valores a las máquinas del proceso
             ((Horno)maquinasProceso[0]).MinTemp = datos[0];
             ((Horno)maquinasProceso[0]).MaxTemp = datos[1];
             ((Prensa)maquinasProceso[1]).MinPresion = datos[2];
@@ -155,6 +153,7 @@ namespace ExtrusionAluminio
             ((TunelEnfriamiento)maquinasProceso[2]).MinTemp = datos[0];
             ((TunelEnfriamiento)maquinasProceso[2]).MaxTemp = datos[1];
 
+            // Solicitar forma de la matriz
             string forma = SeleccionarFormaMatriz();
 
             // Crear tochos con la aleación seleccionada y longitud aleatoria
@@ -162,7 +161,8 @@ namespace ExtrusionAluminio
             {
                 Tocho tocho = new Tocho(aleacionSeleccionada, $"Tocho{i+1}");
                 tochos.Add(tocho);
-                Perfil perfil = new Perfil($"Perfil{i+1}", forma, aleacionSeleccionada);
+                contadorPerfiles++;
+                Perfil perfil = new Perfil($"Perfil{contadorPerfiles}", forma, aleacionSeleccionada);
                 // Almacenar perfil creado en la lista de perfiles
                 perfilesCreados.Add(perfil);
             }         
@@ -177,7 +177,7 @@ namespace ExtrusionAluminio
                     System.Threading.Thread.Sleep(2000);
                 }
             }
-            tochos.Clear();
+            tochos.Clear(); // Resetar la lista de tochos para un nuevo lote
         }
     }
 }

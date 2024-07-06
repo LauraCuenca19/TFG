@@ -1,24 +1,26 @@
 ﻿using Sensores;
-using Actuadores;
 using Materiales;
 
 namespace Maquinaria
 {
-    // Clase Prensa que hereda de Maquina
+    // Clase derivada de Maquina para representar una prensa
     public class Prensa : Maquina
     {
-        public SensorPresion SensorPres { get; set; }
-        public SensorVelocidad SensorVel { get; set; }
-        public double MinPresion { get; set; }
-        public double MaxPresion { get; set; }
-        public double MinVel { get; set; }
-        public double MaxVel { get; set; }
+        public SensorPresion SensorPres { get; set; } // objeto de SensorPresion
+        public SensorVelocidad SensorVel { get; set; } // objeto de SensorVelocidad
+        public double MinPresion { get; set; } // presión mínima de operación
+        public double MaxPresion { get; set; } // presión máxima de operación
+        public double MinVel { get; set; } // velocidad mínima de operación
+        public double MaxVel { get; set; } // velocidad máxima de operación
 
+        // Constructor
         public Prensa(string id, SensorPresion sensorPres, SensorVelocidad sensorVel) : base(id)
         {
             SensorPres = sensorPres;
             SensorVel = sensorVel;
         }
+
+        // Metodo para simular la operación
         public override void RealizarOperacion(Tocho tocho, Perfil perfil)
         {
             Encender();
@@ -33,6 +35,7 @@ namespace Maquinaria
             SensorVel.LeerValor(MinVel, MaxVel);
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine($"Extruyendo tocho {tocho.Id} con presión {SensorPres.Valor} {SensorPres.Unidad} y velocidad {SensorVel.Valor} {SensorVel.Unidad}");
+            Console.WriteLine($"Forma del perfil {perfil.Id}: {perfil.Forma}");
             
             SensorPres.Apagar();
             System.Threading.Thread.Sleep(1000);

@@ -1,18 +1,23 @@
 ﻿namespace SensoresActuadores
 {
-    public class Actuador
+    public class ActuadorTopes
     {
-        public bool TopesSubidos { get; private set; }
+        public bool topesSubidos;
+
+        public ActuadorTopes()
+        {
+            topesSubidos = false;
+        }
 
         public void SubirTopes()
         {
-            TopesSubidos = true;
+            topesSubidos = true;
             Console.WriteLine("Topes subidos.");
         }
 
         public void BajarTopes()
         {
-            TopesSubidos = false;
+            topesSubidos = false;
             Console.WriteLine("Topes bajados.");
         }
     }

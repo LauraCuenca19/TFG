@@ -1,5 +1,4 @@
-using System;
-namespace LineaProduccion
+namespace ComponentesLineaProduccion
 {
     public class Cinta
     {

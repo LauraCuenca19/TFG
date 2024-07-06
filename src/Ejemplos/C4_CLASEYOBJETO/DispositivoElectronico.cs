@@ -41,7 +41,7 @@ namespace Ejemplos.C4_CLASEYOBJETO
         // Propiedad automática para el fabricante
         public string Fabricante { get; set; }
 
-        // Constructor con parámetro para inicializar ID y estado
+        // Constructor con parámetros para inicializar ID y estado
         public DispositivoElectronico(string dispositivoID, bool estado)  
         {
             contadorDispositivos++;
@@ -67,14 +67,14 @@ namespace Ejemplos.C4_CLASEYOBJETO
         // Método público para activar el dispositivo
         public void Activar()
         {
-            Estado = true;
+            Estado = true; // uso de la propiedad Estado en lugar del atributo
             Console.WriteLine("El dispositivo se ha activado.");
         }
 
         // Método público para desactivar el dispositivo
         public void Desactivar()
         {
-            Estado = false;
+            Estado = false; // uso de la propiedad Estado en lugar del atributo
             Console.WriteLine("El dispositivo se ha desactivado.");
         }
     }

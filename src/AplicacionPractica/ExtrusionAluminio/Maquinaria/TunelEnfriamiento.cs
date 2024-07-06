@@ -4,16 +4,16 @@ using Materiales;
 
 namespace Maquinaria
 {
-// Clase Túnel de Enfriamiento
+    // Clase derivada de Maquina para representar un túnel de enfriamiento
     public class TunelEnfriamiento : Maquina
     {
-        public SensorTemperatura SensorTempEntrada { get; set; }
-        public SensorTemperatura SensorTempSalida { get; set; }
-        public Ventilador Ventilador { get; set; }
-        
-        public double MinTemp { get; set; }
-        public double MaxTemp { get; set; }
+        public SensorTemperatura SensorTempEntrada { get; set; } // objeto de SensorTemperatura
+        public SensorTemperatura SensorTempSalida { get; set; } // objeto de SensorTemperatura
+        public Ventilador Ventilador { get; set; } // objeto de Ventilador
+        public double MinTemp { get; set; } // temperatura mínima al inicio del túnel
+        public double MaxTemp { get; set; } // temperatura máxima al inicio del túnel
 
+        // Constructor
         public TunelEnfriamiento(string id, SensorTemperatura sensorTempEntrada, SensorTemperatura sensorTempSalida, Ventilador ventilador) : base(id)
         {
             SensorTempEntrada = sensorTempEntrada;
@@ -21,6 +21,7 @@ namespace Maquinaria
             Ventilador = ventilador;
         }
 
+        // Metodo para simular la operación
         public override void RealizarOperacion(Tocho tocho, Perfil perfil)
         {
             Encender();
@@ -32,15 +33,15 @@ namespace Maquinaria
             SensorTempSalida.Encender();
             System.Threading.Thread.Sleep(1000);
 
-            SensorTempEntrada.LeerValor(MinTemp, MaxTemp);
+            SensorTempEntrada.LeerValor(MinTemp, MaxTemp); // lectura del sensor al principio del túnel
             System.Threading.Thread.Sleep(1000);
             Ventilador.RealizarAccion();
             System.Threading.Thread.Sleep(1000);
-            SensorTempSalida.LeerValor(25,35);
+            SensorTempSalida.LeerValor(25,35); // lectura del sensor al final del túnel
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine($"Enfriando tocho {tocho.Id} desde {SensorTempEntrada.Valor} {SensorTempEntrada.Unidad} hasta {SensorTempSalida.Valor} {SensorTempSalida.Unidad}");
 
-            // Simulación de operación
+            // Asignación de la temperatura medida al tocho
             tocho.Temperatura = SensorTempSalida.Valor;
 
             Ventilador.Apagar();

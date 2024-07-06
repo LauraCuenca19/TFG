@@ -1,11 +1,12 @@
 using SensoresActuadores;
+using ComponentesLineaProduccion;
 
 namespace Estaciones
 {
     public abstract class Estacion
     {
         public SensorPresencia Sensor { get; private set; }
-        public Actuador Topes { get; private set; }
+        public ActuadorTopes Topes { get; private set; }
         public int TiempoMantenimiento { get; set; }
         public int TiempoCiclo { get; set; }
 
@@ -14,7 +15,7 @@ namespace Estaciones
             TiempoMantenimiento = tiempoMantenimiento;
             TiempoCiclo = 0;
             Sensor = new SensorPresencia();
-            Topes = new Actuador();
+            Topes = new ActuadorTopes();
         }
 
         protected void DetectarPalet()

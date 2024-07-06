@@ -2,7 +2,7 @@ namespace Ejemplos.C5_ENCAPSULAMIENTO
 {
     public class Dispositivo
     {
-        // Atributos privados
+        // Atributo privado
         private string numeroDeSerie;
 
         // Atributo protegido
@@ -38,6 +38,7 @@ namespace Ejemplos.C5_ENCAPSULAMIENTO
             Console.WriteLine($"Fecha de Mantenimiento: {fechaMantenimiento}");
         }
 
+        // Método público para acceder a miembros de la clase
         public void DemostrarAccesoDesdeClase()
         {
             // Acceso a atributos y métodos desde dentro de la clase

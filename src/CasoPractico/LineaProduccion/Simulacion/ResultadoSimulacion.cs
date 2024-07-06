@@ -1,6 +1,6 @@
-﻿namespace LineaProduccion
+﻿namespace Simulacion
 {
-    public class Resultado
+    public class ResultadoSimulacion
     {
         public string NombreSimulacion { get;}
         public string TipoSimulacion { get;}
@@ -8,7 +8,7 @@
         public int NumeroEstacionesAutomaticas { get; }
         public double TiempoTotalProduccion { get; }
 
-        public Resultado(string nombreSimulacion, string tipoSimulacion, int numeroEstacionesManuales, int numeroEstacionesAutomaticas, double tiempoTotalProduccion)
+        public ResultadoSimulacion(string nombreSimulacion, string tipoSimulacion, int numeroEstacionesManuales, int numeroEstacionesAutomaticas, double tiempoTotalProduccion)
         {
             NombreSimulacion = nombreSimulacion;
             TipoSimulacion = tipoSimulacion;

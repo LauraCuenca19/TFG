@@ -1,4 +1,4 @@
-﻿using ExtrusionAluminio;
+﻿using SCADA;
 class Program
 {
     static void Main()
@@ -6,7 +6,7 @@ class Program
         SCADAExtrusionAluminio simulador = new SCADAExtrusionAluminio();
         while (true)
         {
-            simulador.ProcesarPerfiles(); // Simular una prueba de creación de perfil
+            simulador.ProcesarPerfiles(); // Simular producción de perfiles
 
             // Opciones al finalizar la prueba
             while (true)
@@ -27,19 +27,18 @@ class Program
                         break;
                     case "2":
                         // Continuar con otra prueba
-                        Console.WriteLine("\nPreparando para iniciar otro lote...");
-                        Console.WriteLine("-------------------------------------");
-                        break; // Salir del switch y continuar con la simulación
+                        Console.WriteLine("\nPreparando para iniciar...");
+                        Console.WriteLine("----------------------------");
+                        break; // Salir del switch
                     case "3":
                         // Salir del programa
                         Console.WriteLine("\nProducción finalizada.");
-                        Environment.Exit(0);
+                        Environment.Exit(0); 
                         break;
                     default:
                         Console.WriteLine("\nOpción no válida. Intente nuevamente.");
                         break;
                 }
-
                 // Si se selecciona continuar con otra prueba, salir del bucle interno
                 if (opcion == "2")
                 {

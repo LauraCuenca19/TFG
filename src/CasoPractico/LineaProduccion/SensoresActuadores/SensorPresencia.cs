@@ -3,16 +3,21 @@
     // Clase abstracta Sensor
     public class SensorPresencia
     {
-        public bool Presencia { get; private set; }
+        private bool presencia;
+
+        public SensorPresencia()
+        {
+            presencia = false;
+        }
 
         public void Detectar()
         {
-            Presencia = true;
+            presencia = true;
         }
 
         public void Resetear()
         {
-            Presencia = false;
+            presencia = false;
         }
     }
 }

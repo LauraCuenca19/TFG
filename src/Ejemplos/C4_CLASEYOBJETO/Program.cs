@@ -4,6 +4,7 @@
     {
         static void Main()
         {
+            // Mostrar cantidad de dispositivos totales creados
             DispositivoElectronico.ObtenerTotalDispositivos();
 
             Console.WriteLine("\nSensor1:");

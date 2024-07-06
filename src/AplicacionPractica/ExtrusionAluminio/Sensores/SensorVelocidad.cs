@@ -1,10 +1,12 @@
 ﻿namespace Sensores
 {
-    // Sensor de Velocidad
+    // Clase derivada de Sensor para representar un sensor de velocidad
     public class SensorVelocidad : Sensor
     {
+        // Constructor
         public SensorVelocidad(string id) : base(id, "m/s") { }
 
+        // Método para simular la lectura del sensor
         public override void LeerValor(double min, double max)
         {
             if (Encendido)

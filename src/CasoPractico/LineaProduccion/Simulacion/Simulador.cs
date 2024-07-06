@@ -1,13 +1,14 @@
 using Estaciones;
+using ComponentesLineaProduccion;
 
-namespace LineaProduccion
+namespace Simulacion
 {
     public class Simulador
     {
         private int contadorEstacionesManuales = 0;
         private int contadorEstacionesAutomaticas = 0;
         public List<Estacion> listaEstaciones { get; set; }
-        public List<Resultado> listaResultados { get; set; }
+        public List<ResultadoSimulacion> listaResultados { get; set; }
         public List<Palet> colaPalets { get; set; }
         public Cinta Cinta { get; set; }
         public int NumeroPalets { get; set; }
@@ -15,7 +16,7 @@ namespace LineaProduccion
         public Simulador()
         {
             listaEstaciones = new List<Estacion>();
-            listaResultados = new List<Resultado>();
+            listaResultados = new List<ResultadoSimulacion>();
             colaPalets = new List<Palet>();
             NumeroPalets = 0;
         }
@@ -115,7 +116,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 contador++;
             }
-            listaResultados.Add(new Resultado(nombre,"Ideal", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
+            listaResultados.Add(new ResultadoSimulacion(nombre,"Ideal", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -146,7 +147,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 contador++;
             }
-            listaResultados.Add(new Resultado(nombre,"Estandar", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
+            listaResultados.Add(new ResultadoSimulacion(nombre,"Estandar", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -178,7 +179,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 contador++;
             }
-            listaResultados.Add(new Resultado(nombre,"Critico", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
+            listaResultados.Add(new ResultadoSimulacion(nombre,"Critico", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -218,7 +219,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 contador++;
             }
-            listaResultados.Add(new Resultado(nombre,$"Fallo en estación {indiceFallo+1}", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
+            listaResultados.Add(new ResultadoSimulacion(nombre,$"Fallo en estación {indiceFallo+1}", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
 
@@ -251,7 +252,7 @@ namespace LineaProduccion
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
                 contador++;
             }
-            listaResultados.Add(new Resultado(nombre,$"Velocidad determinada {velocidad} m/s", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
+            listaResultados.Add(new ResultadoSimulacion(nombre,$"Velocidad determinada {velocidad} m/s", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
         

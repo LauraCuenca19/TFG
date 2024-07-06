@@ -1,5 +1,5 @@
 using System;
-using LineaProduccion;
+using Simulacion;
 
 class Program
 {
