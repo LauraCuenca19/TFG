@@ -37,16 +37,8 @@ namespace ExtrusionAluminio
             return int.Parse(Console.ReadLine());
         }
 
-
-        // Función para solicitar al usuario que ingrese un nombre para el perfil
-        private string SolicitarNombrePerfil()
-        {
-            Console.Write("Ingrese un nombre para el perfil: ");
-            return Console.ReadLine();
-        }
-
         // Función para solicitar al usuario que ingrese la aleación para el perfil
-        private string SolicitarAleacionPerfil()
+        private string SolicitarAleacion()
         {
             Console.Write("Ingrese la aleación del tocho (6061, 7075, 2024): ");
             while (true)
@@ -91,7 +83,7 @@ namespace ExtrusionAluminio
         }
 
         // Método para consultar la guía con los requisitos óptimos para cada aleación
-        private (double, double, double, double, double, double) ConsultarGuiaManual(string aleacion)
+        private double[] ConsultarGuiaManual(string aleacion)
         {
             // Proporcionar recomendaciones basadas en la aleación seleccionada
             switch (aleacion)
@@ -101,25 +93,25 @@ namespace ExtrusionAluminio
                     Console.WriteLine("Temperatura óptima: 450-500°C");
                     Console.WriteLine("Presión: Media a Alta");
                     Console.WriteLine("Ritmo de extrusión: Medio");
-                    return (450,500,6.5,8,4,7.5);
+                    return new double [] {450,500,6.5,8,4,7.5};
                     break;
                 case "7075":
                     Console.WriteLine("\nRecomendaciones para aleación 7075:");
                     Console.WriteLine("Temperatura óptima: 420-470°C");
                     Console.WriteLine("Presión: Alta");
                     Console.WriteLine("Ritmo de extrusión: Lento a Medio");
-                    return (420,470,7.5,8,0.5,5);
+                    return new double [] {420,470,7.5,8,0.5,5};
                     break;
                 case "2024":
                     Console.WriteLine("\nRecomendaciones para aleación 2024:");
                     Console.WriteLine("Temperatura óptima: 400-450°C");
                     Console.WriteLine("Presión: Media");
                     Console.WriteLine("Ritmo de extrusión: Medio a Rápido");
-                    return (400,450,5.5,7,5,10);
+                    return new double [] {400,450,5.5,7,5,10};
                     break;
                 default:
                     Console.WriteLine("Aleación no reconocida.");
-                    return (0,0,0,0,0,0);
+                    return new double [] {0,0,0,0,0,0};
                     break;
             }
         }
@@ -143,25 +135,25 @@ namespace ExtrusionAluminio
         }
 
         // Método para simular una prueba de creación de perfil
-        public void SimularPruebaCreacionPerfil()
+        public void ProcesarPerfiles()
         {
             // Soliciar número de tochos a procesar
             int numTochos = SolicitarTochos();
 
             // Solicitar al usuario que elija la aleación del tocho
-            string aleacionSeleccionada = SolicitarAleacionPerfil();
+            string aleacionSeleccionada = SolicitarAleacion();
 
             // Mostrar la guía con las recomendaciones para la aleación seleccionada
-            (double tempMin, double tempMax, double presionMin, double presionMax, double velMin, double velMax) = ConsultarGuiaManual(aleacionSeleccionada);
+            double[] datos  = ConsultarGuiaManual(aleacionSeleccionada);
 
-            ((Horno)maquinasProceso[0]).MinTemp = tempMin;
-            ((Horno)maquinasProceso[0]).MaxTemp = tempMax;
-            ((Prensa)maquinasProceso[1]).MinPresion = presionMin;
-            ((Prensa)maquinasProceso[1]).MaxPresion = presionMax;
-            ((Prensa)maquinasProceso[1]).MinVel = velMin;
-            ((Prensa)maquinasProceso[1]).MaxVel = velMax;
-            ((TunelEnfriamiento)maquinasProceso[2]).MinTemp = tempMin;
-            ((TunelEnfriamiento)maquinasProceso[2]).MaxTemp = tempMax;
+            ((Horno)maquinasProceso[0]).MinTemp = datos[0];
+            ((Horno)maquinasProceso[0]).MaxTemp = datos[1];
+            ((Prensa)maquinasProceso[1]).MinPresion = datos[2];
+            ((Prensa)maquinasProceso[1]).MaxPresion = datos[3];
+            ((Prensa)maquinasProceso[1]).MinVel = datos[4];
+            ((Prensa)maquinasProceso[1]).MaxVel = datos[5];
+            ((TunelEnfriamiento)maquinasProceso[2]).MinTemp = datos[0];
+            ((TunelEnfriamiento)maquinasProceso[2]).MaxTemp = datos[1];
 
             string forma = SeleccionarFormaMatriz();
 

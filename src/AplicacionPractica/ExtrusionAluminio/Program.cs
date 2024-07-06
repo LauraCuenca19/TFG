@@ -6,7 +6,7 @@ class Program
         SCADAExtrusionAluminio simulador = new SCADAExtrusionAluminio();
         while (true)
         {
-            simulador.SimularPruebaCreacionPerfil(); // Simular una prueba de creación de perfil
+            simulador.ProcesarPerfiles(); // Simular una prueba de creación de perfil
 
             // Opciones al finalizar la prueba
             while (true)

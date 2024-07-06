@@ -1,0 +1,41 @@
+Ejercicio Propuesto 6: Control de Inventario en una Fábrica de Ordenadores
+
+En una fábrica de ordenadores, se desea gestionar el inventario y la producción de productos terminados 
+(portátiles y ordenadores de sobremesa) utilizando partes específicas. 
+El sistema debe permitir reponer partes, producir productos terminados y vender estos productos, actualizando el inventario.
+
+Requisitos del Ejercicio
+1. Define una clase Parte que implemente la interfaz ItemInventario del ejercicio anterior. El constructor debe inicializar todas las propiedades. 
+    * Métodos:
+        - Reponer(int cantidad): Aumenta cantidad unidades disponibles y muestra un mensaje.
+        - Consumir(int cantidad): Disminuye cantidad unidades disponibles. Si hay suficientes unidades, el método devuelve true.
+          De lo contario, se muestra un mensaje indicando que faltan unidades y devuelve false.
+        - ToString(): Muestra la información de la instancia actual: id, descripción, cantidad y precio unitario.
+
+2. Define una clase abstracta ProductoTerminado que implemente la interfaz ItemInventario del ejercicio anterior. 
+La propiedad Nombre debe devolver el tipo de la instancia en cuestión (GetType().Name), y las propiedades Id, Cantidad y PrecioUnitario
+deben inicializarse en el constructor.
+    * Métodos:
+        - Produccion(int cantidadProductos, List<ItemInventario> itemsInventario): Método abstracto que debe ser implementado 
+          por las clases derivadas para definir el proceso de producción y que recibe como parámetros un entero que representa 
+          la cantidad de productos a producir y una lista con los elementos del inventario.
+        - Vender(int cantidad): Disminuye la cantidad disponible del producto terminado y muestra un mensaje con las unidades vendidas. 
+          Si no hay suficientes disponibles, indica cuantas se han vendido en realidad.
+        - ToString(): Muestra la información de la instancia actual: id, descripción, cantidad y precio unitario.
+
+3. Define las clases PCPortatil y PCSobremesa que hereden de ProductoTerminado. Ambas deben inicializar sus objetos llamando al constructor 
+de la clase base y deben implementar el método Produccion() tal que:
+    * PCPortatil debe consumir 1 placa base, 1 carcasa, 1 batería, 1 módulo de RAM y 1 disco duro para producir una unidad.
+    * PCSobremesa debe consumir 1 placa base, 1 caja, 1 fuente de alimentación, 2 módulos de RAM y 2 discos duros para producir una unidad.
+
+4. Clase Program:
+    - Crear instancias de Parte para las diferentes partes utilizadas en la producción 
+    (placa base, carcasa, caja, fuente de alimentacion, bateria, modulo RAM, disco duro).
+    - Crear instancias de PCSobremesa y PCPortátil (cantidad inicial a 0).
+    - Crear una instancia de Inventario y agregar los ítems.
+    - Realizar operaciones de producción, venta y reposición, pidiendo al usuario la cantidad de productos terminados que 
+      se quieren producir y vender y la cantidad de partes a reponer.
+    - Mostrar el inventario actual de partes y productos terminados tras cada operación realizada.
+
+Notas Adicionales: Utiliza mensajes en la consola para indicar el inicio y fin de cada proceso de producción, 
+venta y reposición. Asegúrate de manejar adecuadamente los casos en que no hay suficientes partes o productos para realizar las operaciones solicitadas.

@@ -1,8 +1,5 @@
 Ejercicio Propuesto 2: Simulación Sistema de Control e Iluminación
 
 Simula el comportamiento del sistema de control e iluminación diseñado en el ejercicio anterior. 
-Crea al menos una instancia de de cada clase e implementa la lógica necesaria para:
-
-    * Encender las luces si se detecta movimiento y la intensidad de luz medida es baja.
-    * Ajustar la luz si se detecta movimiento y la intensidad de luz medida es media - alta.
-    * Apagar la luz si no hay movimiento o la intensidad de luz medida es muy alta.
+Crea una instancia de la clase \textbf{ControladorDeLuces} y llama a los métodos necesarios para 
+simular la creación y el funcionamiento de un sistema de monitorización de control con varios sensores y luces.

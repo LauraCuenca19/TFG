@@ -1,5 +1,4 @@
-using System;
-namespace LineaProduccion
+namespace Estaciones
 {
     public class EstacionAutomatica : Estacion
     {
@@ -8,10 +7,12 @@ namespace LineaProduccion
             TiempoCiclo = tiempoCiclo;
         }
 
-        public override void RealizarOperacion()
+        public override void RealizarOperacion(Palet palet)
         {
+            base.RealizarOperacion(palet);
             Console.WriteLine($"Estación automática realizando operación en {TiempoCiclo} segundos.");
             System.Threading.Thread.Sleep(2000);
+            OperacionTerminada();
         }
 
         public override void RealizarMantenimiento()

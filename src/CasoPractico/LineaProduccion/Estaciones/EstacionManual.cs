@@ -1,6 +1,6 @@
 using System;
 
-namespace LineaProduccion
+namespace Estaciones
 {
     public class EstacionManual : Estacion
     {
@@ -15,13 +15,23 @@ namespace LineaProduccion
             TiempoCiclo = 0;
         }
 
-        public override void RealizarOperacion()
+        public override void RealizarOperacion(Palet palet)
         {
+            base.RealizarOperacion(palet);
             Random random = new Random();
             // Generar un entero aleatorio entre valorMinimo (incluido) y valorMaximo (incluido)
             TiempoCiclo = random.Next(TiempoCicloMinimo, TiempoCicloMaximo+1);
             Console.WriteLine($"Estación manual realizando operación en {TiempoCiclo} segundos.");
             System.Threading.Thread.Sleep(2000);
+            OperacionTerminada();
+        }
+
+        public override void RealizarOperacion(Palet palet, int tiempoFijo)
+        {
+            base.RealizarOperacion(palet);
+            Console.WriteLine($"Estación manual realizando operación en {tiempoFijo} segundos.");
+            System.Threading.Thread.Sleep(2000);
+            OperacionTerminada();
         }
 
         public override void RealizarMantenimiento()

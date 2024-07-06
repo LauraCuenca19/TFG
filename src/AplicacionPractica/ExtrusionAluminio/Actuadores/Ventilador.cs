@@ -10,7 +10,7 @@ namespace Actuadores
 
         }
 
-        public override void RealizarAccion(Tocho tocho)
+        public override void RealizarAccion()
         {
             if (Encendido)
             {

@@ -28,7 +28,7 @@ namespace Maquinaria
             SensorTemp.Encender();
             System.Threading.Thread.Sleep(1000);
             
-            Resistencia.RealizarAccion(tocho);
+            Resistencia.RealizarAccion();
             System.Threading.Thread.Sleep(1000);
             SensorTemp.LeerValor(MinTemp, MaxTemp);
             System.Threading.Thread.Sleep(1000);

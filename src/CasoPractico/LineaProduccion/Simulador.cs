@@ -1,5 +1,4 @@
-using System;
-using System.Collections.Generic;
+using Estaciones;
 
 namespace LineaProduccion
 {
@@ -9,12 +8,16 @@ namespace LineaProduccion
         private int contadorEstacionesAutomaticas = 0;
         public List<Estacion> listaEstaciones { get; set; }
         public List<Resultado> listaResultados { get; set; }
+        public List<Palet> colaPalets { get; set; }
         public Cinta Cinta { get; set; }
+        public int NumeroPalets { get; set; }
 
         public Simulador()
         {
             listaEstaciones = new List<Estacion>();
             listaResultados = new List<Resultado>();
+            colaPalets = new List<Palet>();
+            NumeroPalets = 0;
         }
 
         public void ConfigurarLinea()
@@ -67,6 +70,20 @@ namespace LineaProduccion
 
             Cinta = new Cinta(velocidadNominal, velocidadMaxima, distancia);
             System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine("\n¿Cuántos palets hay en la cinta?:");
+            NumeroPalets = int.Parse(Console.ReadLine());
+
+            AgregarPalet(NumeroPalets);
+            System.Threading.Thread.Sleep(1000);
+        }
+
+        public void AgregarPalet(int numPalets)
+        {
+            for (int i = 0; i < numPalets; i++)
+            {
+                colaPalets.Add(new Palet (i+1));
+            }
         }
 
         public double SimulacionIdeal()
@@ -76,21 +93,28 @@ namespace LineaProduccion
 
             Console.Write("Ingrese un nombre para la simulacion: ");
             string nombre = Console.ReadLine();
+            int contador = 0;
 
-            foreach (var estacion in listaEstaciones)
+            while (contador < NumeroPalets)
             {
-                if (estacion is EstacionAutomatica)
+                var palet = colaPalets[contador];
+            
+                foreach (var estacion in listaEstaciones)
                 {
-                    tiempoTotal += estacion.TiempoCiclo;
-                }
-                else if (estacion is EstacionManual EstacionManual)
-                {
-                    tiempoTotal += EstacionManual.TiempoCicloMinimo;
+                    if (estacion is EstacionAutomatica)
+                    {
+                        estacion.RealizarOperacion(palet);
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
+                    else if (estacion is EstacionManual estacionManual)
+                    {
+                        estacion.RealizarOperacion(palet, estacionManual.TiempoCicloMinimo);
+                        tiempoTotal += estacionManual.TiempoCicloMinimo;                        
+                    }
                 }
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
-                estacion.RealizarOperacion();
+                contador++;
             }
-
             listaResultados.Add(new Resultado(nombre,"Ideal", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
@@ -102,21 +126,26 @@ namespace LineaProduccion
 
             Console.Write("Ingrese un nombre para la simulacion: ");
             string nombre = Console.ReadLine();
+            int contador = 0;
 
-            foreach (var estacion in listaEstaciones)
+            while (contador < NumeroPalets)
             {
-                if (estacion is EstacionAutomatica)
+                var palet = colaPalets[contador];
+                foreach (var estacion in listaEstaciones)
                 {
-                    tiempoTotal += estacion.TiempoCiclo;
-                }
-                else if (estacion is EstacionManual)
-                {
-                    tiempoTotal += estacion.TiempoCiclo;
+                    estacion.RealizarOperacion(palet);
+                    if (estacion is EstacionAutomatica)
+                    {
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
+                    else if (estacion is EstacionManual)
+                    {
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
                 }
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
-                estacion.RealizarOperacion();
+                contador++;
             }
-
             listaResultados.Add(new Resultado(nombre,"Estandar", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
@@ -128,19 +157,26 @@ namespace LineaProduccion
 
             double tiempoTotal = 0;
             double velocidad = Cinta.VelocidadNominal;
+            int contador = 0;
 
-            foreach (var estacion in listaEstaciones)
+            while (contador < NumeroPalets)
             {
-                if (estacion is EstacionAutomatica)
+                var palet = colaPalets[contador];
+                foreach (var estacion in listaEstaciones)
                 {
-                    tiempoTotal += estacion.TiempoCiclo;
-                }
-                else if (estacion is EstacionManual EstacionManual)
-                {
-                    tiempoTotal += EstacionManual.TiempoCicloMaximo;
+                    if (estacion is EstacionAutomatica)
+                    {
+                        estacion.RealizarOperacion(palet);
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
+                    else if (estacion is EstacionManual estacionManual)
+                    {
+                        estacion.RealizarOperacion(palet, estacionManual.TiempoCicloMaximo);
+                        tiempoTotal += estacionManual.TiempoCicloMaximo;                        
+                    }
                 }
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
-                estacion.RealizarOperacion();
+                contador++;
             }
             listaResultados.Add(new Resultado(nombre,"Critico", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
@@ -154,26 +190,33 @@ namespace LineaProduccion
             double tiempoTotal = 0;
             double velocidad = Cinta.VelocidadNominal;
 
-            Console.WriteLine("Indica la máquina que ha fallado (índice): ");
+            Console.WriteLine("Indica la máquina que falla (índice): ");
             int indiceFallo = int.Parse(Console.ReadLine())-1;
+            int contador = 0;
 
-            foreach (var estacion in listaEstaciones)
+            while (contador < NumeroPalets)
             {
-                if (listaEstaciones.IndexOf(estacion) == indiceFallo)
+                var palet = colaPalets[contador];
+                foreach (var estacion in listaEstaciones)
                 {
-                    tiempoTotal += estacion.TiempoMantenimiento;
-                    estacion.RealizarMantenimiento();
-                }            
-                if (estacion is EstacionAutomatica)
-                {
-                    tiempoTotal += estacion.TiempoCiclo;
-                }
-                else if (estacion is EstacionManual EstacionManual)
-                {
-                    tiempoTotal += EstacionManual.TiempoCiclo;
+                    if (listaEstaciones.IndexOf(estacion) == indiceFallo)
+                    {
+                        tiempoTotal += estacion.TiempoMantenimiento;
+                        estacion.RealizarMantenimiento();
+                    }            
+                    if (estacion is EstacionAutomatica)
+                    {
+                        estacion.RealizarOperacion(palet);
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
+                    else if (estacion is EstacionManual EstacionManual)
+                    {
+                        estacion.RealizarOperacion(palet);
+                        tiempoTotal += EstacionManual.TiempoCiclo;
+                    }
                 }
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
-                estacion.RealizarOperacion();
+                contador++;
             }
             listaResultados.Add(new Resultado(nombre,$"Fallo en estación {indiceFallo+1}", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
@@ -187,23 +230,27 @@ namespace LineaProduccion
             Console.Write("Introduce la velocidad de la cinta (m/s):");
 
             double velocidad = double.Parse(Console.ReadLine());
-
             double tiempoTotal = 0;
+            int contador = 0;
 
-            foreach (var estacion in listaEstaciones)
+            while (contador < NumeroPalets)
             {
-                if (estacion is EstacionAutomatica)
+                var palet = colaPalets[contador];
+                foreach (var estacion in listaEstaciones)
                 {
-                    tiempoTotal += estacion.TiempoCiclo;
-                }
-                else if (estacion is EstacionManual)
-                {
-                    tiempoTotal += estacion.TiempoCiclo;
+                    estacion.RealizarOperacion(palet);
+                    if (estacion is EstacionAutomatica)
+                    {
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
+                    else if (estacion is EstacionManual)
+                    {
+                        tiempoTotal += estacion.TiempoCiclo;
+                    }
                 }
                 tiempoTotal += Math.Round(Cinta.DistanciaEstaciones / velocidad,2);
-                estacion.RealizarOperacion();
+                contador++;
             }
-
             listaResultados.Add(new Resultado(nombre,$"Velocidad determinada {velocidad} m/s", contadorEstacionesManuales, contadorEstacionesAutomaticas, tiempoTotal));
             return tiempoTotal;
         }
@@ -218,7 +265,7 @@ namespace LineaProduccion
             {
                 foreach (var resultado in listaResultados)
                 {
-                    Console.WriteLine($"- {resultado.NombreSimulacion} ({resultado.TipoSimulacion}): Número de estaciones automáticas: {resultado.NumeroEstacionesAutomaticas}, Numero de estaciones manuales: {resultado.NumeroEstacionesManuales}, Tiempo total de producción: {resultado.TiempoTotalProduccion}s.");
+                    Console.WriteLine($"- {resultado.NombreSimulacion} ({resultado.TipoSimulacion}): Número de estaciones automáticas: {resultado.NumeroEstacionesAutomaticas}, Numero de estaciones manuales: {resultado.NumeroEstacionesManuales}, Palets en la línea: {NumeroPalets}, Tiempo total de producción: {Math.Round(resultado.TiempoTotalProduccion, 2)}s.");
                 }
             }
             else

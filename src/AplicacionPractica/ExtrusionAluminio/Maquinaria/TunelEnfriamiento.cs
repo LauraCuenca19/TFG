@@ -34,7 +34,7 @@ namespace Maquinaria
 
             SensorTempEntrada.LeerValor(MinTemp, MaxTemp);
             System.Threading.Thread.Sleep(1000);
-            Ventilador.RealizarAccion(tocho);
+            Ventilador.RealizarAccion();
             System.Threading.Thread.Sleep(1000);
             SensorTempSalida.LeerValor(25,35);
             System.Threading.Thread.Sleep(1000);

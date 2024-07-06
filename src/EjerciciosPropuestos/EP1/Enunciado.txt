@@ -1,42 +1,79 @@
+
 Ejercicio Propuesto 1: Sistema de Control de Iluminación
 
-Diseña las clases de un sistema que controla la iluminación de una casa inteligente, 
-ajustando las luces según la presencia de personas y la cantidad de luz natural, siguiendo diagrama de clases de la figura:
+PARTE I.
+Diseña las clases que se definen en el diagrama, agrupando los sensores en un namespace Sensores y la luz en un namespace Actuadores:
 
-              +-----------------+
-              |     Sensor      |
-              +-----------------+
-              | - id: String    |
-              | - ubicacion: String|
-              +-----------------+
-              | + leerValor()   |
-              +-----------------+
-                    /          \
-                   /            \
-                  /              \
-       +-----------------+      +-----------------+
-       |SensorDeMovimiento|     |  SensorDeLuz   |
-       +-----------------+      +-----------------+
-       | - estado: Boolean|     | - intensidadLuz: Float |
-       +-----------------+      +-----------------+
-       | +detectarMovimiento()  | + medirIntensidad() |
-       +-----------------+      +-----------------+
+* Clase SensorDeMovimiento: implementa LeerValor() que invoca el método DetectarMovimiento(). 
+Este método generará aleatoriamente un número (0 o 1) para simular la detección de movimiento, 
+cambiando el estado a false o true, según corresponda. Mostrará un mensaje informando si ha habido detección de movimiento y en qué ubicación.
 
-              +-----------------+
-              | ControladorDeLuces |
-              +-----------------+
-              | - estado: String   |
-              +-----------------+
-              | + encenderLuces() |
-              | + apagarLuces()   |
-              | + ajustarIntensidad(Float)|
-              +-----------------+
+* Clase SensorDeLuz: implementa LeerValor() que invoca el método MedirIntensidad().
+ Este método generará aleatoriamente un número entre 0 y 100 para simular la medida de la intensidad de luz natural. 
+ Mostrará un mensaje informando de la intensidad medida y en qué ubicación.
 
-              +-----------------+
-              |       Luz       |
-              +-----------------+
-              | - id: String    |
-              | - intensidad: Float|
-              +-----------------+
-              | + cambiarIntensidad(Float) |
-              +-----------------+
+* Clase Luz: implementa el método CambiarIntensidad, que recibe como parámetro un double y le asigna dicho valor al atributo correspondiente.
+
+PARTE II.
+Diseña la clase ControladorDeLuces que declara objetos de las clases declaradas anteriormente. 
+El objetivo es diseñar un sistema que controle la iluminación de una casa inteligente, ajustando las luces según la presencia de personas y 
+la cantidad de luz natural. La clase usa los namespaces Actuadores y Sensores de la parte I del ejercicio.
+Esta clase debe inicializar dos listas (una de sensores y otra de luces) y debe implementar los siguientes comportamientos:
+
+* Agregar puntos de control: método que pide al usuario la cantidad de puntos de control que hay en el sistema 
+(un punto de control será una combinación de un sensor de luz, un sensor de movimiento y una luz). 
+Por cada punto de control se agregarán dos sensores a la lista de sensores (uno de luz y uno de movimiento) y una luz a la lista de luces, 
+pidiendo al usuario sus ids y la ubicación.
+
+* Encender y apagar luces: métodos privados que reciben como parámetro un objeto de la clase Luz e invocan al método CambiarIntensidad(double),
+modificando la intensidad a 100 o a 0, respectivamente. Muestran un mensaje para informar de que se ha realizado la acción.
+
+* Ajustar la intensidad: método privado que recibe como parámetros un objeto de la clase Luz y un dato de tipo double que representa la nueva intensidad.
+Invoca al método CambiarIntensidad(double) pasándole como parámetro dicho dato.
+
+* Control automático de luces: método que simula el control automático de las luces. 
+Se leerán los valores de cada par de sensores y se podrán dar tres casos:
+  - Encender las luces si se detecta movimiento y la intensidad de luz medida es baja.
+  - Ajustar la luz si se detecta movimiento y la intensidad de luz medida es media - alta.
+  - Apagar la luz si no hay movimiento o la intensidad de luz medida es muy alta.
+
+El sistema queda definido por el diagrama de clases de la figura:
+
+                          +------------------------------------+
+                          |    ControladorDeLuces              |
+                          |------------------------------------|
+                          | - sensores: List<Sensor>           |
+                          | - luces: List<Luz>                 |
+                          |------------------------------------|
+                          | + AgregarPuntosControl() : void    |
+                          | + ControlAutomaticoLuces() : void  |
+                          | - EncenderLuces() : void           |
+                          | - ApagarLuces() : void             |
+                          | - AjustarIntensidad(double) : void |
+                          +------------------------------------+
+                                      < >
+                                       |
+                                       |
+                                       |
+                      +----------------+----------------+
+                      |                                 |
++---------------------|-----+       +-------------------|-----------------+
+|         Sensor            |       |         Luz                         |
+|---------------------------|       |-------------------------------------|
+| - id: string              |\      | - id: string                        |
+| - ubicacion: string       | \     | - intensidad: double                |
+|---------------------------|  \    | - ubicacion: string                 |
+| + LeerValor() : void      |   \   |-------------------------------------|
++-------------|-------------+    \  | + CambiarIntensidad(double) : void  |
+              |                   \ +-------------------------------------+
+              |                    \
+              |                     \
++-------------|------------------+   \ +----------------------------+
+|   SensorDeMovimiento           |    \|      SensorDeLuz           |
+|--------------------------------|     |----------------------------|
+| - estado: bool                 |     | - intensidadLuz: double    |
+|--------------------------------|     |----------------------------|
+| + LeerValor() : void           |     | + LeerValor() : void       |
+| - DetectarMovimiento() : void  |     | - MedirIntensidad() : void |
++--------------------------------+     +----------------------------+
+

@@ -25,6 +25,6 @@ namespace Actuadores
             Console.WriteLine($"Actuador {Id} apagado.");
         }
 
-        public abstract void RealizarAccion(Tocho tocho);
+        public abstract void RealizarAccion();
     }
 }
