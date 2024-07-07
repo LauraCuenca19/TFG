@@ -4,7 +4,7 @@
     public class Perfil
     {
         public string Id { get; } // id del perfil
-        public string Forma { get; set; } // forma de la matriz
+        public string Forma { get; set; } // forma
         public string Aleacion { get; } // aleacion utilizada
 
         // Constructor
