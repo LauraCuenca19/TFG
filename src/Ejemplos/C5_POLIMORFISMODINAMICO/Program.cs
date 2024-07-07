@@ -12,7 +12,7 @@
             // Crear una instancia de SensorTemperatura
             SensorTemperatura sensor2 = new SensorTemperatura("SensorTemperatura1","Honeywell","°C");
 
-            // Inicializar el array con instancias de SensorTemperatura y SensorHumedad
+            // Inicializar el array con instancias de Sensor y SensorTemperatura
             sensores[0] = sensor1;
             sensores[1] = sensor2;
 

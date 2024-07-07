@@ -34,7 +34,7 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
             }
         }
 
-        // Constructor: inicializa el nivel de humedad a 0.0
+        // Constructor
         public SensorHumedad(string dispositivoID, string fabricante, string unidadMedida) : base(dispositivoID, fabricante, unidadMedida)
         {
             humedad = 0.0; // El nivel de humedad inicia en 0.0
@@ -61,7 +61,7 @@ namespace ActividadesResueltas.AR5_POLIMORFISMODINAMICO
                 double suma = 0.0;
 
                 // Simula la lectura de 3 valores de humedad
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < lecturas.Length; i++)
                 {
                     ObtenerValor();
                     lecturas[i] = Humedad;

@@ -32,9 +32,9 @@ namespace Ejemplos.C5_POLIMORFISMO
             // Llamada al método ObtenerValor() usando downcasting (el tipo derivado específico)
             Console.WriteLine("\nLlamadas al método ObtenerValor() usando downcasting:");
             ((SensorTemperatura)sensores[0]).ObtenerValor();
-            Console.WriteLine($"Valor medido por el sensor {sensores[0].DispositivoID}: {sensores[0].Medida}{sensores[1].unidadMedida}");
+            Console.WriteLine($"Valor medido por el sensor {sensores[0].DispositivoID}: {sensores[0].Medida}{sensores[0].unidadMedida}");
             ((SensorHumedad)sensores[1]).ObtenerValor();
-            Console.WriteLine($"Valor medido por el sensor {sensores[1].DispositivoID}: {sensores[0].Medida}{sensores[1].unidadMedida}");
+            Console.WriteLine($"Valor medido por el sensor {sensores[1].DispositivoID}: {sensores[1].Medida}{sensores[1].unidadMedida}");
         }
     }
 }

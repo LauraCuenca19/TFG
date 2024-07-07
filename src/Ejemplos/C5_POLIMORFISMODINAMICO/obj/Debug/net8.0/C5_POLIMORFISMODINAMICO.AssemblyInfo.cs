@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C5_POLIMORFISMODINAMICO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c207d057cb53535a9a1a2b4cd977b7ad8608ae35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+704fffcca8e01b7b334a6d189bbf53f9ef4df470")]
 [assembly: System.Reflection.AssemblyProductAttribute("C5_POLIMORFISMODINAMICO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C5_POLIMORFISMODINAMICO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

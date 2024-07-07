@@ -17,6 +17,7 @@ namespace ActividadesResueltas.AR6_CLASESABSTRACTAS
         public override abstract void Activar();
         public override abstract void Desactivar();
 
+        // Método público para activar la parada de emergencia
         public void ParadaEmergencia()
         {
             if (estadoEmergencia) Desactivar();

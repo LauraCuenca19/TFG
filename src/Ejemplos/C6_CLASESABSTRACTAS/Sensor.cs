@@ -109,7 +109,7 @@ namespace Ejemplos.C6_CLASESABSTRACTAS
             return base.ToString() + $", Calibrado:{calibrado}, Unidad de medida: {unidadMedida}";
         }
 
-        // Métodos abstractos para activar/desactivar el dispositivo
+        // Métodos sobrescritos para activar/desactivar el dispositivo
         public override void Activar()
         {
             Estado = true;

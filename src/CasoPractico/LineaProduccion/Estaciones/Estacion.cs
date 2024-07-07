@@ -13,7 +13,6 @@ namespace Estaciones
         public Estacion(int tiempoMantenimiento)
         {
             TiempoMantenimiento = tiempoMantenimiento;
-            TiempoCiclo = 0;
             Sensor = new SensorPresencia();
             Topes = new ActuadorTopes();
         }

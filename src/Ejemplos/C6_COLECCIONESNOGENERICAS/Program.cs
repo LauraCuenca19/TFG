@@ -12,7 +12,7 @@ class Program
         Console.WriteLine("*** ARRAYLIST ***");
         Console.WriteLine("*****************\n");
 
-        // Inicializa lista con diferentes tipos de elementos
+        // Inicializa lista con diferentes tipos de datos
         ArrayList lista = new ArrayList(){ "Resistencia", 100 };
         
         // Añade más elementos a la lista
@@ -74,7 +74,7 @@ class Program
         Console.WriteLine("*** STACK ***");
         Console.WriteLine("*************\n");
 
-        Stack<string> pila = new Stack<string>();
+        Stack pila = new Stack();
         
         // Agregar estados a la pila
         pila.Push("Inicialización del sistema");

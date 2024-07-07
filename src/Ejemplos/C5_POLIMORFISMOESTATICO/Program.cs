@@ -4,6 +4,7 @@
     {
         static void Main()
         {
+            // Crea objeto de la clase Sensor
             Sensor sensor1 = new Sensor("s1", "Honeywell", "°C");
             // Encender el sensor
             sensor1.Activar();

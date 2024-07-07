@@ -11,7 +11,6 @@
             Sensor sensor1 = new Sensor("s1","FabricanteA","°C");
             // Crear una instancia de SensorTemperatura
             SensorTemperatura sensor2 = new SensorTemperatura("sT1","FabricanteB","°C");
-
             // Crear una instancia de SensorHumedad
             SensorHumedad sensor3 = new SensorHumedad("sH1","FabricanteC","%");
 

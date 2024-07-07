@@ -13,7 +13,7 @@ public class Program
         Console.WriteLine("*****************\n");
 
         // Crear una lista de string
-        var lista = new List<string>();
+        List<string> lista = new List<string>();
 
         // Mostrar capacidad de la lista
         Console.WriteLine($"Capacidad inicial: {lista.Capacity}");
@@ -56,7 +56,7 @@ public class Program
         Console.WriteLine("*********************************\n");
 
         // Crear un diccionario
-        var diccionario = new Dictionary<string, double>();
+        Dictionary<string, double> diccionario = new Dictionary<string, double>();
 
         // Agregar algunos sensores y sus valores iniciales
         diccionario.Add("SensorTemperatura", 22.5); // Temperatura
@@ -90,7 +90,7 @@ public class Program
         Console.WriteLine("*********************************\n");
 
         // Crear una pila de piezas
-        var piezasDespiece = new Stack<string>();
+        Stack<string> piezasDespiece = new Stack<string>();
         
         // Agregar piezas a la pila en el orden en que deben colocarse
         piezasDespiece.Push("Base");
@@ -120,7 +120,7 @@ public class Program
         Console.WriteLine("*********************************\n");
 
         // Crear una cola de piezas de ensamblaje
-        var piezasMontaje = new Queue<string>();
+        Queue<string> piezasMontaje = new Queue<string>();
 
         // Agregar piezas a la cola en el orden en que deben ensamblarse
         piezasMontaje.Enqueue("Base");

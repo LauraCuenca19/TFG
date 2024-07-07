@@ -45,6 +45,7 @@ namespace Ejemplos.C5_POLIMORFISMODINAMICO
             temperatura = 0.0;
         }
 
+        // Método sobrescrito para obtener un valor simulado de medida
         public override void ObtenerValor()
         {
             Console.WriteLine("Llamada al método de la clase SensorTemperatura:");

@@ -91,7 +91,7 @@ namespace ActividadesResueltas.AR6_INTERFACES
                     // Verificar si se debe continuar en modo automático
                     Console.WriteLine("¿Desea continuar en modo automático? (si/no): ");
                     var respuesta = Console.ReadLine();
-                    if (respuesta?.ToLower() == "si")
+                    if (respuesta.ToLower() == "si")
                     {
                         Console.WriteLine("Inserte nueva temperatura medida:");
                         if (double.TryParse(Console.ReadLine(), out double nuevaTemperatura))
@@ -100,7 +100,7 @@ namespace ActividadesResueltas.AR6_INTERFACES
                         }
                         else
                         {
-                            Console.WriteLine("Temperatura inválida. Saliendo del modo automático.");
+                            Console.WriteLine("Temperatura no válida. Saliendo del modo automático.");
                             ModoAuto = false;
                         }
                     } else ModoAuto = false;
@@ -118,11 +118,6 @@ namespace ActividadesResueltas.AR6_INTERFACES
                 if (velocidad < 0 || velocidad > ValorMax)
                 {
                     Console.WriteLine("El valor debe estar entre el mínimo y el máximo permitido.");
-                }
-                else if (velocidad == 0) 
-                {
-                    
-                    ValorActual = 0;
                 }
                 else ValorActual = velocidad;
             } else Console.WriteLine("El ventilador está apagado.");

@@ -17,7 +17,7 @@
             ventilador.ModoAutomatico();
 
             // Mostrar información del ventilador
-            Console.WriteLine(ventilador);
+            ventilador.ToString();
 
             // Esperar un poco antes de finalizar
             System.Threading.Thread.Sleep(1000); // 1 segundo

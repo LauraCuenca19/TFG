@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AR5_POLIMORFISMOESTATICO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+463a544ab3f2fdb03c71246659d5e9d11c1594c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+704fffcca8e01b7b334a6d189bbf53f9ef4df470")]
 [assembly: System.Reflection.AssemblyProductAttribute("AR5_POLIMORFISMOESTATICO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AR5_POLIMORFISMOESTATICO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

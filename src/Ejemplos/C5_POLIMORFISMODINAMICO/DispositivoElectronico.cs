@@ -23,7 +23,7 @@ namespace Ejemplos.C5_POLIMORFISMODINAMICO
         // Propiedad automática para el fabricante
         public string Fabricante { get; set; }
 
-        // Constructor con parámetro para inicializar ID y estado
+        // Constructor con parámetros para inicializar ID y estado
         public DispositivoElectronico(string dispositivoID, bool estado)  
         {
             contadorDispositivos++;

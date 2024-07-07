@@ -19,7 +19,7 @@
             // Medida puntual
             sensor1.Medir();
 
-            // Toma de 3 medidas con 5 segundos de diferencia entre ellas.
+            // Toma de 3 medidas con 5 segundos de diferencia entre ellas
             sensor1.Medir(3,5);
 
             // Apagar el sensor

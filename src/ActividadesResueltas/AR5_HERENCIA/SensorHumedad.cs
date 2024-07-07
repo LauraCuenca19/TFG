@@ -36,17 +36,16 @@ namespace ActividadesResueltas.AR5_HERENCIA
             }
         }
 
-        // Constructor: inicializa el nivel de humedad a 0.0
+        // Constructor
         public SensorHumedad(string dispositivoID, string fabricante, string unidadMedida) : base(dispositivoID, fabricante, unidadMedida)
         {
-            humedad = 0.0; // El nivel de humedad inicia en 0.0
+            humedad = 0.0; // El nivel de humedad se inicia en 0.0
         }
 
         // Método para medir y actualizar el nivel de humedad del sensor
         public void MedirHumedad()
         {
-            double valor = ObtenerValor();
-            Humedad = valor;
+            Humedad = ObtenerValor();
         }
     }
 }

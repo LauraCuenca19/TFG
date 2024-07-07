@@ -3,8 +3,8 @@ namespace Ejemplos.C5_HERENCIA
     public class Sensor : DispositivoElectronico
     {   
         // Atributos
-        private bool calibrado; // almacena el estado de calibración
-        public readonly string unidadMedida; // almacena las unidades de medida
+        private bool calibrado; // estado de calibración
+        public readonly string unidadMedida; // unidades de medida
 
         // Propiedad (solo lectura) para el estado de calibración
         public bool Calibrado 

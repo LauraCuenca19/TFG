@@ -11,8 +11,6 @@ namespace Estaciones
         {
             TiempoCicloMinimo = tiempoCicloMinimo;
             TiempoCicloMaximo = tiempoCicloMaximo;
-            TiempoMantenimiento = tiempoMantenimiento;
-            TiempoCiclo = 0;
         }
 
         public override void RealizarOperacion(Palet palet)

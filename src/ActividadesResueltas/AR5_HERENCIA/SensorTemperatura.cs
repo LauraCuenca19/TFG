@@ -40,7 +40,7 @@ namespace ActividadesResueltas.AR5_HERENCIA
             }
         }
 
-        // Constructor que inicializa el sensor con tipo "Temperatura"
+        // Constructor
         public SensorTemperatura(string dispositivoID, string fabricante, string unidadMedida) : base(dispositivoID, fabricante, unidadMedida)
         {
             // Inicializa la temperatura a 0.0
@@ -50,8 +50,7 @@ namespace ActividadesResueltas.AR5_HERENCIA
         // Método para medir y actualizar la temperatura del sensor
         public void MedirTemperatura()
         {
-            double valor = ObtenerValor();
-            Temperatura = valor;
+            Temperatura = ObtenerValor();
         }
     }
 }

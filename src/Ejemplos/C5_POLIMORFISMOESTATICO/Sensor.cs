@@ -3,9 +3,9 @@
     public class Sensor : DispositivoElectronico
     {   
         // Atributos
-        private bool calibrado; // almacena el estado de calibración
-        public readonly string unidadMedida; // almacena las unidades de medida
-        private DateTime instanteMedida; // almacena el día y la hora
+        private bool calibrado; // estado de calibración
+        public readonly string unidadMedida; // unidades de medida
+        private DateTime instanteMedida; // día y la hora
 
         // Propiedad (solo lectura) para el estado de calibración
         public bool Calibrado 
@@ -34,9 +34,8 @@
         // Método público para obtener un valor simulado de medida
         public void ObtenerValor()
         {
-            Random rand = new Random(); // Crea una instancia de la clase Random para generar valores aleatorios
-            // Genera un valor aleatorio entre 0 y 100
-            Medida = Math.Round(rand.NextDouble() * 100, 2);  // Redondea el valor a 2 decimales
+            Random rand = new Random();
+            Medida = Math.Round(rand.NextDouble() * 100, 2);
         }
 
         // Método sobrecargado Medir
@@ -54,7 +53,7 @@
                 ObtenerValor();
                 instanteMedida = DateTime.Now;
                 Console.WriteLine($"{instanteMedida} - Medida {i + 1}: {Medida}{unidadMedida}");
-                System.Threading.Thread.Sleep(1000); // Simula una espera de 1 segundo entre medidas
+                System.Threading.Thread.Sleep(1000); // Simula una espera de 1s
             }
         }
 

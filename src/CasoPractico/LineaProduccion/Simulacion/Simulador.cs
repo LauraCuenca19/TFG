@@ -19,6 +19,8 @@ namespace Simulacion
             listaResultados = new List<ResultadoSimulacion>();
             colaPalets = new List<Palet>();
             NumeroPalets = 0;
+            contadorEstacionesManuales = 0;
+            contadorEstacionesAutomaticas = 0;
         }
 
         public void ConfigurarLinea()

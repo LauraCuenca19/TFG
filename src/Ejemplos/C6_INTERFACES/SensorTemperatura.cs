@@ -137,7 +137,7 @@ namespace Ejemplos.C6_INTERFACES
                 // Verificar si se debe continuar en modo automático
                 Console.WriteLine("¿Desea continuar en modo automático? (si/no): ");
                 var respuesta = Console.ReadLine();
-                if (respuesta?.ToLower() != "si")
+                if (respuesta.ToLower() != "si")
                 {
                     ModoAuto = false;
                 }
